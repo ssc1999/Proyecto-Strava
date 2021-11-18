@@ -124,7 +124,7 @@ public class SessionWindow extends JFrame{
         JPanel panelBotonAceptar = new JPanel();
         JButton botonAceptar = new JButton("Aceptar");
         botonAceptar.setPreferredSize(new Dimension(150, 25));
-        panelBotonAceptar.add(botonVerSesiones);
+        panelBotonAceptar.add(botonAceptar);
 
         panel3Abajo.add(panelBotonAceptar);
 
