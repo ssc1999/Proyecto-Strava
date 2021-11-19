@@ -171,33 +171,43 @@ public class LoginWindow extends JFrame{
         // panel 3
 
         panel3 = new JPanel(new BorderLayout());
+        panel3.setBackground(Color.BLUE);
 
         panel3Arriba = new JPanel(new GridLayout(2, 2));
         panel3Abajo = new JPanel(new BorderLayout());
 
+        JPanel panelLabelEmail = new JPanel(); 
         JLabel email = new JLabel("Email:");
+        panelLabelEmail.add(email);
+        panelLabelEmail.setBackground(Color.BLUE);
 
         JPanel panelTextEmail = new JPanel(); 
         JTextField textEmail = new JPasswordField();
         textEmail.setPreferredSize(new Dimension(150, 25));
         panelTextEmail.add(textEmail);
+        panelTextEmail.setBackground(Color.BLUE);
 
+        JPanel panelLabelContrasenya = new JPanel(); 
         JLabel contrasenya = new JLabel("Contraseña:");
+        panelLabelContrasenya.add(contrasenya);
+        panelLabelContrasenya.setBackground(Color.BLUE);
 
         JPanel panelTextContrasenya = new JPanel(); 
         JTextField textContrasenya = new JPasswordField();
         textContrasenya.setPreferredSize(new Dimension(150, 25));
         panelTextContrasenya.add(textContrasenya);
+        panelTextContrasenya.setBackground(Color.BLUE);
 
-        panel3Arriba.add(email);
+        panel3Arriba.add(panelLabelEmail);
         panel3Arriba.add(panelTextEmail);
-        panel3Arriba.add(contrasenya);
+        panel3Arriba.add(panelLabelContrasenya);
         panel3Arriba.add(panelTextContrasenya);
 
         JPanel panelBotonAceptar = new JPanel();
         JButton botonAceptar = new JButton("Aceptar");
         botonAceptar.setPreferredSize(new Dimension(150, 25));
         panelBotonAceptar.add(botonAceptar);
+        panelBotonAceptar.setBackground(Color.BLUE);
 
         panel3Abajo.add(panelBotonAceptar);
 
