@@ -4,11 +4,15 @@ import javax.swing.JFrame;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 public class LoginWindow extends JFrame{
 
-    private Container cp;
+    //private Container cp;
+
+    private JFrame framePrincipal;
 
     private JPanel panelPrincipal;
 
@@ -27,9 +31,13 @@ public class LoginWindow extends JFrame{
 
     public LoginWindow() {
 
-        cp = this.getContentPane();
+        /*cp = this.getContentPane();
         this.setTitle("Login Window");
-        this.setSize(850, 250);
+        this.setSize(800, 300);*/
+
+        framePrincipal = new JFrame();
+        framePrincipal.setTitle("Login Window");
+        framePrincipal.setSize(800, 300);
 
         panelPrincipal = new JPanel(new BorderLayout());
         panelPrincipal.setSize(500, 200);
@@ -39,15 +47,28 @@ public class LoginWindow extends JFrame{
         panel1 = new JPanel(new BorderLayout());
 
         panel1Arriba = new JPanel(new BorderLayout());
-        panel1Medio = new JPanel(new GridLayout(2, 1));
+        panel1Medio = new JPanel(new GridLayout(1, 2));
         panel1Abajo = new JPanel(new BorderLayout());
 
         JPanel panelBotonStravaLogin = new JPanel();
         JButton botonStravaLogin = new JButton("Strava Login");
-        botonStravaLogin.setPreferredSize(new Dimension(150, 25));
+        botonStravaLogin.setPreferredSize(new Dimension(300, 50));
         panelBotonStravaLogin.add(botonStravaLogin);
 
         panel1Arriba.add(panelBotonStravaLogin);
+
+        botonStravaLogin.addActionListener(new ActionListener() {
+				
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                try {
+                    panel3.setVisible(true);;
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        });
 
         JPanel panelBotonGoogleLogin = new JPanel();
         JButton botonGoogleLogin = new JButton("Google Login");
@@ -64,20 +85,22 @@ public class LoginWindow extends JFrame{
 
         JPanel panelBotonRegistrarse = new JPanel();
         JButton botonRegistrarse = new JButton("Registrarse");
-        botonRegistrarse.setPreferredSize(new Dimension(150, 25));
+        botonRegistrarse.setPreferredSize(new Dimension(150, 40));
         panelBotonRegistrarse.add(botonRegistrarse);
 
         panel1Abajo.add(panelBotonRegistrarse);
 
-        panel1.add(panel1Arriba);
-        panel1.add(panel1Medio);
-        panel1.add(panel1Abajo);
+        panel1.add(panel1Arriba, BorderLayout.NORTH);
+        panel1.add(panel1Medio, BorderLayout.CENTER);
+        panel1.add(panel1Abajo, BorderLayout. SOUTH);
+
+        panel1.setVisible(true);
 
         // panel 2
 
         panel2 = new JPanel(new BorderLayout());
 
-        panel2Arriba = new JPanel(new GridLayout(2, 4));
+        panel2Arriba = new JPanel(new GridLayout(6, 2));
         panel2Abajo = new JPanel(new BorderLayout());
 
         JLabel atributo1 = new JLabel("Atributo 1");
@@ -115,7 +138,7 @@ public class LoginWindow extends JFrame{
         textAtributo5.setPreferredSize(new Dimension(150, 25));
         panelTextAtributo5.add(textAtributo5);
 
-        JLabel atributo6 = new JLabel("Atributo 4");
+        JLabel atributo6 = new JLabel("Atributo 6");
 
         JPanel panelTextAtributo6 = new JPanel(); 
         JTextField textAtributo6 = new JPasswordField();
@@ -140,10 +163,10 @@ public class LoginWindow extends JFrame{
         botonRegistrarse2.setPreferredSize(new Dimension(150, 25));
         panelBotonRegistrarse2.add(botonRegistrarse2);
 
-        panel2Abajo.add(panelBotonRegistrarse);
+        panel2Abajo.add(panelBotonRegistrarse2);
 
-        panel2.add(panel2Arriba);
-        panel2.add(panel2Abajo);
+        panel2.add(panel2Arriba, BorderLayout.NORTH);
+        panel2.add(panel2Abajo, BorderLayout.SOUTH);
 
         // panel 3
 
@@ -178,8 +201,8 @@ public class LoginWindow extends JFrame{
 
         panel3Abajo.add(panelBotonAceptar);
 
-        panel3.add(panel3Arriba);
-        panel3.add(panel3Abajo);
+        panel3.add(panel3Arriba, BorderLayout.NORTH);
+        panel3.add(panel3Abajo, BorderLayout. SOUTH);
 
         //
 
@@ -187,10 +210,14 @@ public class LoginWindow extends JFrame{
         panelPrincipal.add(panel2);
         panelPrincipal.add(panel3);
 
-        cp.add(panelPrincipal);
+        framePrincipal.add(panelPrincipal);
 
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setVisible(true);
+        framePrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        framePrincipal.setVisible(true);
+
+        /*panel1.setVisible(true);
+        panel2.setVisible(false);
+        panel3.setVisible(false);*/
     }
 
     public static void main(String[] args) throws IOException {
