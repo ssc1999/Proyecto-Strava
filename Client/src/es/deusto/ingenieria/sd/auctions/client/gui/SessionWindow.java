@@ -56,18 +56,18 @@ public class SessionWindow extends JFrame{
         panel1Arriba.add(panelBotonNuevaSesion);
         panel1Abajo.add(panelBotonVerSesiones);
 
-        panel1.add(panel1Arriba);
-        panel1.add(panel1Abajo);
+        panel1.add(panel1Arriba, BorderLayout.NORTH);
+        panel1.add(panel1Abajo, BorderLayout.SOUTH);
 
         // panel 2
 
-        panel2 = new JPanel(new GridLayout(1, 3));
+        panel2 = new JPanel(new GridLayout(5, 1));
 
         int numSesiones = 5;
 
         for (int i = 1; i <= numSesiones; i++) {
             JPanel panelBotonSesion = new JPanel();
-            JButton botonSesion = new JButton("Sesión" +i);
+            JButton botonSesion = new JButton("Sesión " +i);
             botonSesion.setPreferredSize(new Dimension(150, 25));
             panelBotonSesion.add(botonSesion);
             panel2.add(panelBotonSesion);
@@ -81,34 +81,34 @@ public class SessionWindow extends JFrame{
 
         panel3 = new JPanel(new BorderLayout());
 
-        panel3Arriba = new JPanel(new GridLayout(2, 4));
+        panel3Arriba = new JPanel(new GridLayout(4, 2));
         panel3Abajo = new JPanel(new BorderLayout());
 
         JLabel atributo1 = new JLabel("Atributo 1");
 
         JPanel panelTextAtributo1 = new JPanel(); 
-        JTextField textAtributo1 = new JPasswordField();
+        JTextField textAtributo1 = new JTextField();
         textAtributo1.setPreferredSize(new Dimension(150, 25));
         panelTextAtributo1.add(textAtributo1);
 
         JLabel atributo2 = new JLabel("Atributo 2");
 
         JPanel panelTextAtributo2 = new JPanel(); 
-        JTextField textAtributo2 = new JPasswordField();
+        JTextField textAtributo2 = new JTextField();
         textAtributo2.setPreferredSize(new Dimension(150, 25));
         panelTextAtributo2.add(textAtributo2);
 
         JLabel atributo3 = new JLabel("Atributo 3");
 
         JPanel panelTextAtributo3 = new JPanel(); 
-        JTextField textAtributo3 = new JPasswordField();
+        JTextField textAtributo3 = new JTextField();
         textAtributo3.setPreferredSize(new Dimension(150, 25));
         panelTextAtributo3.add(textAtributo3);
 
         JLabel atributo4 = new JLabel("Atributo 4");
 
         JPanel panelTextAtributo4 = new JPanel(); 
-        JTextField textAtributo4 = new JPasswordField();
+        JTextField textAtributo4 = new JTextField();
         textAtributo4.setPreferredSize(new Dimension(150, 25));
         panelTextAtributo4.add(textAtributo4);
 
@@ -128,8 +128,8 @@ public class SessionWindow extends JFrame{
 
         panel3Abajo.add(panelBotonAceptar);
 
-        panel3.add(panel3Arriba);
-        panel3.add(panel3Abajo);
+        panel3.add(panel3Arriba, BorderLayout.NORTH);
+        panel3.add(panel3Abajo, BorderLayout.SOUTH);
 
         //
 

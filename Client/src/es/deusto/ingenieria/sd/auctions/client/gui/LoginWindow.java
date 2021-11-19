@@ -106,42 +106,42 @@ public class LoginWindow extends JFrame{
         JLabel atributo1 = new JLabel("Atributo 1");
 
         JPanel panelTextAtributo1 = new JPanel(); 
-        JTextField textAtributo1 = new JPasswordField();
+        JTextField textAtributo1 = new JTextField();
         textAtributo1.setPreferredSize(new Dimension(150, 25));
         panelTextAtributo1.add(textAtributo1);
 
         JLabel atributo2 = new JLabel("Atributo 2");
 
         JPanel panelTextAtributo2 = new JPanel(); 
-        JTextField textAtributo2 = new JPasswordField();
+        JTextField textAtributo2 = new JTextField();
         textAtributo2.setPreferredSize(new Dimension(150, 25));
         panelTextAtributo2.add(textAtributo2);
 
         JLabel atributo3 = new JLabel("Atributo 3");
 
         JPanel panelTextAtributo3 = new JPanel(); 
-        JTextField textAtributo3 = new JPasswordField();
+        JTextField textAtributo3 = new JTextField();
         textAtributo3.setPreferredSize(new Dimension(150, 25));
         panelTextAtributo3.add(textAtributo3);
 
         JLabel atributo4 = new JLabel("Atributo 4");
 
         JPanel panelTextAtributo4 = new JPanel(); 
-        JTextField textAtributo4 = new JPasswordField();
+        JTextField textAtributo4 = new JTextField();
         textAtributo4.setPreferredSize(new Dimension(150, 25));
         panelTextAtributo4.add(textAtributo4);
 
         JLabel atributo5 = new JLabel("Atributo 5");
 
         JPanel panelTextAtributo5 = new JPanel(); 
-        JTextField textAtributo5 = new JPasswordField();
+        JTextField textAtributo5 = new JTextField();
         textAtributo5.setPreferredSize(new Dimension(150, 25));
         panelTextAtributo5.add(textAtributo5);
 
         JLabel atributo6 = new JLabel("Atributo 6");
 
         JPanel panelTextAtributo6 = new JPanel(); 
-        JTextField textAtributo6 = new JPasswordField();
+        JTextField textAtributo6 = new JTextField();
         textAtributo6.setPreferredSize(new Dimension(150, 25));
         panelTextAtributo6.add(textAtributo6);
 
@@ -182,7 +182,7 @@ public class LoginWindow extends JFrame{
         panelLabelEmail.setBackground(Color.BLUE);
 
         JPanel panelTextEmail = new JPanel(); 
-        JTextField textEmail = new JPasswordField();
+        JTextField textEmail = new JTextField();
         textEmail.setPreferredSize(new Dimension(150, 25));
         panelTextEmail.add(textEmail);
         panelTextEmail.setBackground(Color.BLUE);
