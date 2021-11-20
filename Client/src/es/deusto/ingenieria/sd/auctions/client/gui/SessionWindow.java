@@ -3,6 +3,8 @@ package es.deusto.ingenieria.sd.auctions.client.gui;
 import javax.swing.JFrame; 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 public class SessionWindow extends JFrame{
@@ -53,10 +55,38 @@ public class SessionWindow extends JFrame{
         botonNuevaSesion.setPreferredSize(new Dimension(150, 25));
         panelBotonNuevaSesion.add(botonNuevaSesion);
 
+        botonNuevaSesion.addActionListener(new ActionListener() {
+				
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                try {
+                    panel3.setVisible(true);;
+                    panel1.setVisible(false);
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        });
+
         JPanel panelBotonVerSesiones = new JPanel();
         JButton botonVerSesiones = new JButton("Ver sesiones");
         botonVerSesiones.setPreferredSize(new Dimension(150, 25));
         panelBotonVerSesiones.add(botonVerSesiones);
+
+        botonVerSesiones.addActionListener(new ActionListener() {
+				
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                try {
+                    scroll.setVisible(true);
+                    panel1.setVisible(false);
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        });
 
         panel1Arriba.add(panelBotonNuevaSesion);
         panel1Abajo.add(panelBotonVerSesiones);
@@ -74,6 +104,20 @@ public class SessionWindow extends JFrame{
             botonSesion.setPreferredSize(new Dimension(150, 25));
             panelBotonSesion.add(botonSesion);
             panel2.add(panelBotonSesion);
+
+            botonSesion.addActionListener(new ActionListener() {
+				
+                @Override
+                public void actionPerformed(ActionEvent arg0) {
+                    try {
+                        panel3.setVisible(true);
+                        scroll.setVisible(false);
+                    } catch (Exception e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                }
+            });
         }
 
         // panel 3
