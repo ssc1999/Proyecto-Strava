@@ -1,3 +1,5 @@
+package es.deusto.ingenieria.sd.auctions.client.gui;
+
 import javax.swing.JFrame; 
 import javax.swing.*;
 import java.awt.*;
@@ -149,3 +151,4 @@ public class SessionWindow extends JFrame{
            });
 
  }
+}
