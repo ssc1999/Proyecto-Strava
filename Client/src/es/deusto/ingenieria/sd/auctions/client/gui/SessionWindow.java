@@ -1,14 +1,11 @@
-package es.deusto.ingenieria.sd.auctions.client.gui;
-
-import javax.swing.JFrame;
-
+import javax.swing.JFrame; 
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 
 public class SessionWindow extends JFrame{
 
-    private Container cp;
+    private JPanel contentPane;
 
     private JPanel panelPrincipal;
 
@@ -26,19 +23,31 @@ public class SessionWindow extends JFrame{
 
     public SessionWindow() {
 
-        cp = this.getContentPane();
-        this.setTitle("Session Window");
-        this.setSize(850, 250);
+        setTitle("Session Window");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setPreferredSize(new Dimension(950, 400));
+        setVisible(true);
+        pack();
 
-        panelPrincipal = new JPanel(new BorderLayout());
-        panelPrincipal.setSize(500, 200);
-
-        // panel 1
+        contentPane = new JPanel();
+        setContentPane(contentPane);
 
         panel1 = new JPanel(new BorderLayout());
-
         panel1Arriba = new JPanel(new BorderLayout());
         panel1Abajo = new JPanel(new BorderLayout());
+       
+        panel2 = new JPanel(new GridLayout(5, 1));
+        scroll = new JScrollPane(panel2);
+       
+        panel3 = new JPanel(new BorderLayout());
+        panel3Arriba = new JPanel(new GridLayout(4, 2));
+        panel3Abajo = new JPanel(new BorderLayout());
+
+        contentPane.add(panel1);
+        contentPane.add(scroll);
+        contentPane.add(panel3);
+
+        // panel 1
 
         JPanel panelBotonNuevaSesion = new JPanel();
         JButton botonNuevaSesion = new JButton("Crear nueva sesion");
@@ -50,9 +59,6 @@ public class SessionWindow extends JFrame{
         botonVerSesiones.setPreferredSize(new Dimension(150, 25));
         panelBotonVerSesiones.add(botonVerSesiones);
 
-        panelPrincipal.add(panel1Arriba, BorderLayout.NORTH);
-        panelPrincipal.add(panel1Abajo, BorderLayout.SOUTH);
-
         panel1Arriba.add(panelBotonNuevaSesion);
         panel1Abajo.add(panelBotonVerSesiones);
 
@@ -61,28 +67,20 @@ public class SessionWindow extends JFrame{
 
         // panel 2
 
-        panel2 = new JPanel(new GridLayout(5, 1));
-
         int numSesiones = 5;
 
         for (int i = 1; i <= numSesiones; i++) {
             JPanel panelBotonSesion = new JPanel();
-            JButton botonSesion = new JButton("Sesión " +i);
+            JButton botonSesion = new JButton("Sesión " + i);
             botonSesion.setPreferredSize(new Dimension(150, 25));
             panelBotonSesion.add(botonSesion);
             panel2.add(panelBotonSesion);
         }
-
-        scroll = new JScrollPane(panel2);
+        
+        panel2.setVisible(true);
         scroll.setVisible(true);
-        //this.add(scroll);
 
         // panel 3
-
-        panel3 = new JPanel(new BorderLayout());
-
-        panel3Arriba = new JPanel(new GridLayout(4, 2));
-        panel3Abajo = new JPanel(new BorderLayout());
 
         JLabel atributo1 = new JLabel("Atributo 1");
 
@@ -131,19 +129,23 @@ public class SessionWindow extends JFrame{
         panel3.add(panel3Arriba, BorderLayout.NORTH);
         panel3.add(panel3Abajo, BorderLayout.SOUTH);
 
-        //
-
-        panelPrincipal.add(panel1);
-        panelPrincipal.add(panel2);
-        panelPrincipal.add(panel3);
-
-        cp.add(panelPrincipal);
-
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setVisible(true);
+        contentPane.setVisible(true);
+        panel1.setVisible(false);
+        scroll.setVisible(true);
+        panel3.setVisible(false);
+        
     }
 
     public static void main(String[] args) throws IOException {
-		new SessionWindow();
-	}
-}
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+             try {
+              SessionWindow frame = new SessionWindow();
+              frame.setVisible(true);
+             } catch (Exception e) {
+              e.printStackTrace();
+             }
+            }
+           });
+
+ }
