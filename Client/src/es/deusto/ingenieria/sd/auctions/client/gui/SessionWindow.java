@@ -9,19 +9,16 @@ public class SessionWindow extends JFrame{
 
     private JPanel contentPane;
 
-    private JPanel panelPrincipal;
-
     private JPanel panel1;
     private JPanel panel1Arriba;
     private JPanel panel1Abajo;
 
     private JPanel panel2;
+    private JScrollPane scroll;
 
     private JPanel panel3;
     private JPanel panel3Arriba;
     private JPanel panel3Abajo;
-
-    private JScrollPane scroll;
 
     public SessionWindow() {
 
@@ -46,7 +43,7 @@ public class SessionWindow extends JFrame{
         panel3Abajo = new JPanel(new BorderLayout());
 
         contentPane.add(panel1);
-        contentPane.add(scroll);
+        contentPane.add(scroll); // panel2
         contentPane.add(panel3);
 
         // panel 1
@@ -78,9 +75,6 @@ public class SessionWindow extends JFrame{
             panelBotonSesion.add(botonSesion);
             panel2.add(panelBotonSesion);
         }
-        
-        panel2.setVisible(true);
-        scroll.setVisible(true);
 
         // panel 3
 
@@ -132,10 +126,9 @@ public class SessionWindow extends JFrame{
         panel3.add(panel3Abajo, BorderLayout.SOUTH);
 
         contentPane.setVisible(true);
-        panel1.setVisible(false);
-        scroll.setVisible(true);
+        panel1.setVisible(true);
+        scroll.setVisible(false); // panel2
         panel3.setVisible(false);
-        
     }
 
     public static void main(String[] args) throws IOException {
@@ -149,6 +142,5 @@ public class SessionWindow extends JFrame{
              }
             }
            });
-
- }
+    }
 }
