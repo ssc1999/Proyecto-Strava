@@ -26,7 +26,7 @@ public class SessionWindow extends JFrame{
 
         setTitle("Session Window");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setPreferredSize(new Dimension(950, 400));
+        setPreferredSize(new Dimension(800, 330));
         setVisible(true);
         pack();
 
@@ -37,12 +37,12 @@ public class SessionWindow extends JFrame{
         panel1Arriba = new JPanel(new BorderLayout());
         panel1Abajo = new JPanel(new BorderLayout());
        
-        panel2 = new JPanel(new GridLayout(5, 1));
+        panel2 = new JPanel(new GridLayout(7, 1));
         scroll = new JScrollPane(panel2);
        
         panel3 = new JPanel(new BorderLayout());
         panel3Arriba = new JPanel(new GridLayout(4, 2));
-        panel3Abajo = new JPanel(new BorderLayout());
+        panel3Abajo = new JPanel(new GridLayout(1, 2));
 
         contentPane.add(panel1);
         contentPane.add(scroll); // panel2
@@ -103,6 +103,7 @@ public class SessionWindow extends JFrame{
             JButton botonSesion = new JButton("Sesión " + i);
             botonSesion.setPreferredSize(new Dimension(150, 25));
             panelBotonSesion.add(botonSesion);
+
             panel2.add(panelBotonSesion);
 
             botonSesion.addActionListener(new ActionListener() {
@@ -119,6 +120,46 @@ public class SessionWindow extends JFrame{
                 }
             });
         }
+
+        JPanel panelBotonAtras = new JPanel();
+        JButton botonAtras = new JButton("Atrás");
+        botonAtras.setPreferredSize(new Dimension(150, 25));
+        panelBotonAtras.add(botonAtras);
+
+        botonAtras.addActionListener(new ActionListener() {
+				
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                try {
+                    scroll.setVisible(false);
+                    panel1.setVisible(true);
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        JPanel panelBotonAceptar = new JPanel();
+        JButton botonAceptar = new JButton("Aceptar");
+        botonAceptar.setPreferredSize(new Dimension(150, 25));
+        panelBotonAceptar.add(botonAceptar);
+
+        botonAceptar.addActionListener(new ActionListener() {
+				
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                try {
+                    System.exit(0);
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        panel2.add(panelBotonAceptar);
+        panel2.add(panelBotonAtras);
 
         // panel 3
 
@@ -159,12 +200,45 @@ public class SessionWindow extends JFrame{
         panel3Arriba.add(atributo4);
         panel3Arriba.add(panelTextAtributo4);
 
-        JPanel panelBotonAceptar = new JPanel();
-        JButton botonAceptar = new JButton("Aceptar");
-        botonAceptar.setPreferredSize(new Dimension(150, 25));
-        panelBotonAceptar.add(botonAceptar);
+        JPanel panelBotonAtras2 = new JPanel();
+        JButton botonAtras2 = new JButton("Atrás");
+        botonAtras2.setPreferredSize(new Dimension(150, 25));
+        panelBotonAtras2.add(botonAtras2);
 
-        panel3Abajo.add(panelBotonAceptar);
+        botonAtras2.addActionListener(new ActionListener() {
+				
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                try {
+                    panel3.setVisible(false);
+                    panel1.setVisible(true);
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        JPanel panelBotonAceptar2 = new JPanel();
+        JButton botonAceptar2 = new JButton("Aceptar");
+        botonAceptar2.setPreferredSize(new Dimension(150, 25));
+        panelBotonAceptar2.add(botonAceptar2);
+
+        botonAceptar2.addActionListener(new ActionListener() {
+				
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                try {
+                    System.exit(0);
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        panel3Abajo.add(panelBotonAtras2);
+        panel3Abajo.add(panelBotonAceptar2);
 
         panel3.add(panel3Arriba, BorderLayout.NORTH);
         panel3.add(panel3Abajo, BorderLayout.SOUTH);
