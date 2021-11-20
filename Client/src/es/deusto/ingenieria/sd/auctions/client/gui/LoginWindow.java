@@ -10,11 +10,7 @@ import java.io.IOException;
 
 public class LoginWindow extends JFrame{
 
-    //private Container cp;
-
-    private JFrame framePrincipal;
-
-    private JPanel panelPrincipal;
+    private JPanel contentPane;
 
     private JPanel panel1;
     private JPanel panel1Arriba;
@@ -31,24 +27,33 @@ public class LoginWindow extends JFrame{
 
     public LoginWindow() {
 
-        /*cp = this.getContentPane();
-        this.setTitle("Login Window");
-        this.setSize(800, 300);*/
+        setTitle("Login Window");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setPreferredSize(new Dimension(800, 330));
+        setVisible(true);
+        pack();
 
-        framePrincipal = new JFrame();
-        framePrincipal.setTitle("Login Window");
-        framePrincipal.setSize(800, 300);
-
-        panelPrincipal = new JPanel(new BorderLayout());
-        panelPrincipal.setSize(500, 200);
-
-        // panel 1
+        contentPane = new JPanel();
+        setContentPane(contentPane);
 
         panel1 = new JPanel(new BorderLayout());
-
         panel1Arriba = new JPanel(new BorderLayout());
         panel1Medio = new JPanel(new GridLayout(1, 2));
         panel1Abajo = new JPanel(new BorderLayout());
+
+        panel2 = new JPanel(new BorderLayout());
+        panel2Arriba = new JPanel(new GridLayout(6, 2));
+        panel2Abajo = new JPanel(new GridLayout(1, 2));
+
+        panel3 = new JPanel(new BorderLayout());
+        panel3Arriba = new JPanel(new GridLayout(2, 2));
+        panel3Abajo = new JPanel(new GridLayout(1, 2));
+
+        contentPane.add(panel1);
+        contentPane.add(panel2);
+        contentPane.add(panel3);
+
+        // panel 1
 
         JPanel panelBotonStravaLogin = new JPanel();
         JButton botonStravaLogin = new JButton("Strava Login");
@@ -62,7 +67,8 @@ public class LoginWindow extends JFrame{
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 try {
-                    panel3.setVisible(true);;
+                    panel3.setVisible(true);
+                    panel1.setVisible(false);
                 } catch (Exception e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
@@ -75,10 +81,38 @@ public class LoginWindow extends JFrame{
         botonGoogleLogin.setPreferredSize(new Dimension(150, 25));
         panelBotonGoogleLogin.add(botonGoogleLogin);
 
+        botonGoogleLogin.addActionListener(new ActionListener() {
+				
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                try {
+                    panel3.setVisible(true);
+                    panel1.setVisible(false);
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        });
+
         JPanel panelBotonFacebookLogin = new JPanel();
         JButton botonFacebookLogin = new JButton("Facebook Login");
         botonFacebookLogin.setPreferredSize(new Dimension(150, 25));
         panelBotonFacebookLogin.add(botonFacebookLogin);
+
+        botonFacebookLogin.addActionListener(new ActionListener() {
+				
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                try {
+                    panel3.setVisible(true);
+                    panel1.setVisible(false);
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        });
 
         panel1Medio.add(panelBotonGoogleLogin);
         panel1Medio.add(panelBotonFacebookLogin);
@@ -87,6 +121,20 @@ public class LoginWindow extends JFrame{
         JButton botonRegistrarse = new JButton("Registrarse");
         botonRegistrarse.setPreferredSize(new Dimension(150, 40));
         panelBotonRegistrarse.add(botonRegistrarse);
+
+        botonRegistrarse.addActionListener(new ActionListener() {
+				
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                try {
+                    panel2.setVisible(true);
+                    panel1.setVisible(false);
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        });
 
         panel1Abajo.add(panelBotonRegistrarse);
 
@@ -97,11 +145,6 @@ public class LoginWindow extends JFrame{
         panel1.setVisible(true);
 
         // panel 2
-
-        panel2 = new JPanel(new BorderLayout());
-
-        panel2Arriba = new JPanel(new GridLayout(6, 2));
-        panel2Abajo = new JPanel(new BorderLayout());
 
         JLabel atributo1 = new JLabel("Atributo 1");
 
@@ -163,6 +206,39 @@ public class LoginWindow extends JFrame{
         botonRegistrarse2.setPreferredSize(new Dimension(150, 25));
         panelBotonRegistrarse2.add(botonRegistrarse2);
 
+        botonRegistrarse2.addActionListener(new ActionListener() {
+				
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                try {
+                    System.exit(0);
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        JPanel panelBotonAtras = new JPanel();
+        JButton botonAtras = new JButton("Atrás");
+        botonAtras.setPreferredSize(new Dimension(150, 25));
+        panelBotonAtras.add(botonAtras);
+
+        botonAtras.addActionListener(new ActionListener() {
+				
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                try {
+                    panel2.setVisible(false);
+                    panel1.setVisible(true);
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        panel2Abajo.add(panelBotonAtras);
         panel2Abajo.add(panelBotonRegistrarse2);
 
         panel2.add(panel2Arriba, BorderLayout.NORTH);
@@ -170,33 +246,23 @@ public class LoginWindow extends JFrame{
 
         // panel 3
 
-        panel3 = new JPanel(new BorderLayout());
-        panel3.setBackground(Color.BLUE);
-
-        panel3Arriba = new JPanel(new GridLayout(2, 2));
-        panel3Abajo = new JPanel(new BorderLayout());
-
         JPanel panelLabelEmail = new JPanel(); 
         JLabel email = new JLabel("Email:");
         panelLabelEmail.add(email);
-        panelLabelEmail.setBackground(Color.BLUE);
 
         JPanel panelTextEmail = new JPanel(); 
         JTextField textEmail = new JTextField();
         textEmail.setPreferredSize(new Dimension(150, 25));
         panelTextEmail.add(textEmail);
-        panelTextEmail.setBackground(Color.BLUE);
 
         JPanel panelLabelContrasenya = new JPanel(); 
         JLabel contrasenya = new JLabel("Contraseña:");
         panelLabelContrasenya.add(contrasenya);
-        panelLabelContrasenya.setBackground(Color.BLUE);
 
         JPanel panelTextContrasenya = new JPanel(); 
         JTextField textContrasenya = new JPasswordField();
         textContrasenya.setPreferredSize(new Dimension(150, 25));
         panelTextContrasenya.add(textContrasenya);
-        panelTextContrasenya.setBackground(Color.BLUE);
 
         panel3Arriba.add(panelLabelEmail);
         panel3Arriba.add(panelTextEmail);
@@ -207,8 +273,40 @@ public class LoginWindow extends JFrame{
         JButton botonAceptar = new JButton("Aceptar");
         botonAceptar.setPreferredSize(new Dimension(150, 25));
         panelBotonAceptar.add(botonAceptar);
-        panelBotonAceptar.setBackground(Color.BLUE);
 
+        botonAceptar.addActionListener(new ActionListener() {
+				
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                try {
+                    System.exit(0);
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        JPanel panelBotonAtras2 = new JPanel();
+        JButton botonAtras2 = new JButton("Atrás");
+        botonAtras2.setPreferredSize(new Dimension(150, 25));
+        panelBotonAtras2.add(botonAtras2);
+
+        botonAtras2.addActionListener(new ActionListener() {
+				
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                try {
+                    panel3.setVisible(false);
+                    panel1.setVisible(true);
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        panel3Abajo.add(panelBotonAtras2);
         panel3Abajo.add(panelBotonAceptar);
 
         panel3.add(panel3Arriba, BorderLayout.NORTH);
@@ -216,18 +314,10 @@ public class LoginWindow extends JFrame{
 
         //
 
-        panelPrincipal.add(panel1);
-        panelPrincipal.add(panel2);
-        panelPrincipal.add(panel3);
-
-        framePrincipal.add(panelPrincipal);
-
-        framePrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        framePrincipal.setVisible(true);
-
-        /*panel1.setVisible(true);
+        contentPane.setVisible(true);
+        panel1.setVisible(true);
         panel2.setVisible(false);
-        panel3.setVisible(false);*/
+        panel3.setVisible(false);
     }
 
     public static void main(String[] args) throws IOException {

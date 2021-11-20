@@ -243,6 +243,8 @@ public class SessionWindow extends JFrame{
         panel3.add(panel3Arriba, BorderLayout.NORTH);
         panel3.add(panel3Abajo, BorderLayout.SOUTH);
 
+        //
+
         contentPane.setVisible(true);
         panel1.setVisible(true);
         scroll.setVisible(false); // panel2
