@@ -28,7 +28,7 @@ public class SessionDTO implements Serializable {
 		this.id = 0;
 		this.tittle = "";
 		this.sport = "";
-		this.distance = 0;
+		this.distance = 0.00;
 		this.iDate = "";
 		this.iHour = "";
 		this.duration = "";
