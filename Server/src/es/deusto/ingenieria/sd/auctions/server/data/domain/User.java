@@ -6,11 +6,12 @@ public class User {
 	protected String name;
 	protected double weight;
 	protected double height;
+	protected String birthDate;
 	protected int freq;
 	protected int maxFreq;
 	protected int restFreq;
 	
-	public User(String type, String email, String name, double weight, double height, int freq, int maxFreq,
+	public User(String type, String email, String name, double weight, double height, String birthDate, int freq, int maxFreq,
 			int restFreq) {
 		super();
 		this.type = type;
@@ -18,6 +19,7 @@ public class User {
 		this.name = name;
 		this.weight = weight;
 		this.height = height;
+		this.birthDate = birthDate;
 		this.freq = freq;
 		this.maxFreq = maxFreq;
 		this.restFreq = restFreq;
@@ -30,6 +32,7 @@ public class User {
 		this.name = "";
 		this.weight = 0.00;
 		this.height = 0.00;
+		this.birthDate = "";
 		this.freq = 0;
 		this.maxFreq = 0;
 		this.restFreq = 0;
@@ -71,6 +74,14 @@ public class User {
 		return height;
 	}
 
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	public String getBirthDate() {
+		return birthDate;
+	}
+
 	public void setHeight(double height) {
 		this.height = height;
 	}
@@ -102,7 +113,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [type=" + type + ", email=" + email + ", name=" + name + ", weight=" + weight + ", height="
-				+ height + ", freq=" + freq + ", maxFreq=" + maxFreq + ", restFreq=" + restFreq + "]";
+				+ height + ", birthDate=" + birthDate + ", freq=" + freq + ", maxFreq=" + maxFreq + ", restFreq=" + restFreq + "]";
 	}
 	
 }
