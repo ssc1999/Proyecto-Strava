@@ -1,89 +1,108 @@
 package es.deusto.ingenieria.sd.auctions.server.data.domain;
 
-import java.util.ArrayList;
-import java.util.List;
+public class User {
+	protected String type;
+	protected String email;
+	protected String name;
+	protected double weight;
+	protected double height;
+	protected int freq;
+	protected int maxFreq;
+	protected int restFreq;
+	
+	public User(String type, String email, String name, double weight, double height, int freq, int maxFreq,
+			int restFreq) {
+		super();
+		this.type = type;
+		this.email = email;
+		this.name = name;
+		this.weight = weight;
+		this.height = height;
+		this.freq = freq;
+		this.maxFreq = maxFreq;
+		this.restFreq = restFreq;
+	}
+	
+	public User() {
+		super();
+		this.type = "";
+		this.email = "";
+		this.name = "";
+		this.weight = 0.00;
+		this.height = 0.00;
+		this.freq = 0;
+		this.maxFreq = 0;
+		this.restFreq = 0;
+	}
 
-public class User {	
-	private String nickname;
-	private String password;
-	private String email;
-	private List<Bid> bids = new ArrayList<>();
-	private List<Article> articles = new ArrayList<>();
-		
-	public String getNickname() {
-		return nickname;
+	public String getType() {
+		return type;
 	}
-	
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
+
+	public void setType(String type) {
+		this.type = type;
 	}
-	
-	public boolean checkPassword(String password) {
-		return this.password.equals(password);
-	}
-	
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
+
 	public String getEmail() {
 		return email;
 	}
-	
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	public List<Bid> getBids() {
-		return bids;
+
+	public String getName() {
+		return name;
 	}
-	
-	public void setBids(List<Bid> bids) {
-		this.bids = bids;
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	
-	public void addBid(Bid bid) {
-		if (bid != null && !this.bids.contains(bid)) {
-			this.bids.add(bid);
-		}
+
+	public double getWeight() {
+		return weight;
 	}
-	
-	public List<Article> getArticles() {
-		return articles;
+
+	public void setWeight(double weight) {
+		this.weight = weight;
 	}
-	
-	public void setArticles(List<Article> articles) {
-		this.articles = articles;
+
+	public double getHeight() {
+		return height;
 	}
-	
-	public void addArticle(Article article) {
-		if (article != null && !this.articles.contains(article)) {
-			this.articles.add(article);
-		}
+
+	public void setHeight(double height) {
+		this.height = height;
 	}
-		
+
+	public int getFreq() {
+		return freq;
+	}
+
+	public void setFreq(int freq) {
+		this.freq = freq;
+	}
+
+	public int getMaxFreq() {
+		return maxFreq;
+	}
+
+	public void setMaxFreq(int maxFreq) {
+		this.maxFreq = maxFreq;
+	}
+
+	public int getRestFreq() {
+		return restFreq;
+	}
+
+	public void setRestFreq(int restFreq) {
+		this.restFreq = restFreq;
+	}
+
 	@Override
 	public String toString() {
-		StringBuffer result = new StringBuffer();
-		
-		result.append(this.nickname);
-		result.append(" - ");
-		result.append(this.email);
-		result.append(" - (");
-		result.append(this.articles.size());
-		result.append(" articles) - (");
-		result.append(this.bids.size());
-		result.append(" bids)");
-		
-		return result.toString();
+		return "User [type=" + type + ", email=" + email + ", name=" + name + ", weight=" + weight + ", height="
+				+ height + ", freq=" + freq + ", maxFreq=" + maxFreq + ", restFreq=" + restFreq + "]";
 	}
 	
-	@Override
-	public boolean equals(Object obj) {
-		if (this.getClass().getName().equals(obj.getClass().getName())) {
-			return this.email.equals(((User)obj).email);
-		}
-		
-		return false;
-	}
 }
