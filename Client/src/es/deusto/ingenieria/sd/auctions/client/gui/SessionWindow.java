@@ -36,6 +36,8 @@ public class SessionWindow extends JFrame{
         setVisible(true);
         pack();
 
+        int numSesiones = 20;
+
         contentPane = new JPanel();
         contentPane.setBackground(new Color(0, 0, 51));
         setContentPane(contentPane);
@@ -48,7 +50,7 @@ public class SessionWindow extends JFrame{
         panel1Derecha.setBackground(new Color(0, 0, 51));
        
         panel2 = new JPanel(new GridLayout(7, 1));
-        panel2Arriba = new JPanel(new GridLayout(5, 1));
+        panel2Arriba = new JPanel(new GridLayout(numSesiones, 1));
         panel2Abajo = new JPanel(new GridLayout(1, 2));
         scroll = new JScrollPane(panel2Arriba); // scroll --> panel2Arriba
        
@@ -129,7 +131,7 @@ public class SessionWindow extends JFrame{
 
         // panel 2
 
-        int numSesiones = 5;
+        //numSesiones = 20;
 
         for (int i = 1; i <= numSesiones; i++) {
             JPanel panelBotonSesion = new JPanel();
