@@ -50,10 +50,10 @@ public class SessionWindow extends JFrame{
         panel1Derecha.setBackground(new Color(0, 0, 51));
        
         panel2 = new JPanel(new GridLayout(7, 1));
-        panel2Arriba = new JPanel(new GridLayout(numSesiones, 1));
-        panel2Abajo = new JPanel(new GridLayout(1, 2));
+        panel2Arriba = new JPanel(new GridLayout(numSesiones/2, 2));
+        panel2Abajo = new JPanel(new BorderLayout());
         scroll = new JScrollPane(panel2Arriba); // scroll --> panel2Arriba
-        scroll.setPreferredSize(new Dimension(100, 240));
+        scroll.setPreferredSize(new Dimension(400, 250));
        
         panel3 = new JPanel(new BorderLayout());
         panel3Arriba = new JPanel(new GridLayout(4, 2));
@@ -187,7 +187,7 @@ public class SessionWindow extends JFrame{
         JPanel panelBotonAtras = new JPanel();
         panelBotonAtras.setBackground(new Color(0, 0, 51));
         JButton botonAtras = new JButton("Atrás");
-        botonAtras.setPreferredSize(new Dimension(150, 25));
+        botonAtras.setPreferredSize(new Dimension(110, 25));
         botonAtras.setBackground(Color.LIGHT_GRAY);
         panelBotonAtras.add(botonAtras);
 
@@ -205,29 +205,7 @@ public class SessionWindow extends JFrame{
             }
         });
 
-        JPanel panelBotonAceptar = new JPanel();
-        panelBotonAceptar.setBackground(new Color(0, 0, 51));
-        JButton botonAceptar = new JButton("Aceptar");
-        botonAceptar.setBackground(Color.LIGHT_GRAY);
-        botonAceptar.setPreferredSize(new Dimension(150, 25));
-        panelBotonAceptar.add(botonAceptar);
-
-        botonAceptar.addActionListener(new ActionListener() {
-				
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                try {
-                    panel2.setVisible(false);
-                    panel1.setVisible(true);
-                } catch (Exception e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-            }
-        });
-
         panel2Abajo.add(panelBotonAtras);
-        panel2Abajo.add(panelBotonAceptar);
         
         panel2.add(scroll, BorderLayout.NORTH);
         panel2.add(panel2Abajo, BorderLayout.SOUTH);
@@ -343,7 +321,7 @@ public class SessionWindow extends JFrame{
 
         contentPane.setVisible(true);
         panel1.setVisible(true);
-        panel2.setVisible(false); // panel2
+        panel2.setVisible(false);
         panel3.setVisible(false);
     }
 
