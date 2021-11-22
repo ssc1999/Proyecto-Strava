@@ -3,16 +3,16 @@ package es.deusto.ingenieria.sd.auctions.server.data.domain;
 import java.util.List;
 
 public class User {
-	private String type;
-	private String email;
-	private String name;
-	private double weight;
-	private double height;
-	private String birthDate;
-	private int freq;
-	private int maxFreq;
-	private int restFreq;
-	private List<Session> sessions;
+	protected String type;
+	protected String email;
+	protected String name;
+	protected double weight;
+	protected double height;
+	protected String birthDate;
+	protected int freq;
+	protected int maxFreq;
+	protected int restFreq;
+	protected List<Session> sessions;
 
 	public User(String type, String email, String name, double weight, double height, String birthDate, int freq, int maxFreq,
 			int restFreq, List<Session> sessions) {
