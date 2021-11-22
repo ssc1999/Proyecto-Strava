@@ -6,18 +6,18 @@ import es.deusto.ingenieria.sd.auctions.server.data.domain.User;
 //TODO: Implement Singleton Pattern
 public class LoginService {
 		
-	public User login(String type, String email, String password) {
+	public long login(String type, String email, String password) {
 		//TODO: Get User using DAO and check 		
-		LocalUser user = new LocalUser();		
-		user.setEmail("thomas.e2001@gmail.com");		
+		LocalUser user = new LocalUser();
+		user.setEmail("thomas.e2001@gmail.com");
+		user.setPassword("1234");
 		//Generate the hash of the password
-		String sha1 = org.apache.commons.codec.digest.DigestUtils.sha1Hex("$!9PhNz,");		
-		user.setPassword(sha1);
+		long token = System.currentTimeMillis();		
 		
 		if (user.getEmail().equals(email) && user.checkPassword(password)) {		
-			return user;
+			return token;
 		} else {
-			return null;
+			return 0;
 		}
 	}
 }

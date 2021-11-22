@@ -1,5 +1,6 @@
 package es.deusto.ingenieria.sd.auctions.server.data.dto;
 
+import es.deusto.ingenieria.sd.auctions.server.data.domain.LocalUser;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.User;
 
 //This class is part of the DTO pattern. It also implements Singleton Pattern.
@@ -16,11 +17,11 @@ public class UserAssembler {
 		return instance;
 	}
 
-	public UserDTO userToDTO(User user) {
+	public UserDTO userToDTO(LocalUser user) {
 		UserDTO dto = new UserDTO();
 		
 		dto.setEmail(user.getEmail());
-		dto.setNickname(user.getNickname());
+		dto.setName(user.getName());
 		
 		return dto;
 	}
