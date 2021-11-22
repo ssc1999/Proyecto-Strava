@@ -1,6 +1,9 @@
 package es.deusto.ingenieria.sd.auctions.server.data.dto;
 
 import java.io.Serializable;
+import java.util.List;
+
+import es.deusto.ingenieria.sd.auctions.server.data.domain.Session;
 
 //This class implements DTO pattern
 public class UserDTO implements Serializable {	
@@ -15,9 +18,10 @@ public class UserDTO implements Serializable {
 	private int freq;
 	private int maxFreq;
 	private int restFreq;
+	private List<Session> sessions;
 	
 	public UserDTO(String type, String email, String name, double weight, double height, String birthDate, int freq,
-			int maxFreq, int restFreq) {
+			int maxFreq, int restFreq, List<Session> sessions) {
 		super();
 		this.type = type;
 		this.email = email;
@@ -28,6 +32,7 @@ public class UserDTO implements Serializable {
 		this.freq = freq;
 		this.maxFreq = maxFreq;
 		this.restFreq = restFreq;
+		this.sessions = sessions;
 	}
 
 	public UserDTO() {
@@ -41,6 +46,7 @@ public class UserDTO implements Serializable {
 		this.freq = 0;
 		this.maxFreq = 0;
 		this.restFreq = 0;
+		this.sessions = null;
 	}
 
 	public String getType() {
@@ -115,11 +121,19 @@ public class UserDTO implements Serializable {
 		this.restFreq = restFreq;
 	}
 
+	public List<Session> getSessions() {
+		return sessions;
+	}
+
+	public void setSessions(List<Session> sessions) {
+		this.sessions = sessions;
+	}
+
 	@Override
 	public String toString() {
 		return "UserDTO [type=" + type + ", email=" + email + ", name=" + name + ", weight=" + weight + ", height="
 				+ height + ", birthDate=" + birthDate + ", freq=" + freq + ", maxFreq=" + maxFreq + ", restFreq="
-				+ restFreq + "]";
+				+ restFreq + ", sessions=" + sessions + "]";
 	}
 	
 }

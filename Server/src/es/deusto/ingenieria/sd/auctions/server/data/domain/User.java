@@ -13,8 +13,6 @@ public class User {
 	private int maxFreq;
 	private int restFreq;
 	private List<Session> sessions;
-	
-	
 
 	public User(String type, String email, String name, double weight, double height, String birthDate, int freq, int maxFreq,
 			int restFreq, List<Session> sessions) {

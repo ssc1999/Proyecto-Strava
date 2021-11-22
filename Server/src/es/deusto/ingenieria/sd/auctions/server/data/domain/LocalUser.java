@@ -4,9 +4,9 @@ public class LocalUser extends User{
 	
 	protected String password;
 
-	public LocalUser(String type, String email, String name, double weight, double height, int freq, int maxFreq,
+	public LocalUser(String type, String email, String name, double weight, double height, String birthDate, int freq, int maxFreq,
 			int restFreq, String password) {
-		super(type, email, name, weight, height, freq, maxFreq, restFreq);
+		super(type, email, name, weight, height, birthDate,freq, maxFreq, restFreq);
 		this.password = password;
 	}
 	
@@ -23,10 +23,18 @@ public class LocalUser extends User{
 		this.password = password;
 	}
 
+	public boolean checkPassword(String password) {
+		if(this.password.contentEquals(password)) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
 	@Override
 	public String toString() {
 		return "User [type=" + type + ", email=" + email + "password=" + password + ", name=" + name + ", weight=" + weight + ", height="
-				+ height + ", freq=" + freq + ", maxFreq=" + maxFreq + ", restFreq=" + restFreq + "]";
+				+ height + ", birthDate=" + birthDate + ", freq=" + freq + ", maxFreq=" + maxFreq + ", restFreq=" + restFreq + "]";
 	}
 		
 }
