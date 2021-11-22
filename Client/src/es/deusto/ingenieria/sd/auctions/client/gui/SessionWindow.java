@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
+
 public class SessionWindow extends JFrame{
 
     private JPanel contentPane;
@@ -65,19 +66,24 @@ public class SessionWindow extends JFrame{
 
         // panel 1
 
-        /*//JPanel panelLabelImage = new JPanel();
-        BufferedImage bufferedImage = ImageIO.read(new File("images/barco2.jpg"));
-        Image image = bufferedImage.getScaledInstance(400, 200, Image.SCALE_DEFAULT);
+        // no se si está bien puesta la dirección de la foto
+
+        /*BufferedImage bufferedImage = ImageIO.read(new File("images/barco2.jpg"));
+        Image image = bufferedImage.getScaledInstance(40, 20, Image.SCALE_DEFAULT);
 		JLabel labelImage = new JLabel(new ImageIcon(image));
-        //panelLabelImage.add(labelImage);
 
         panel1Izquierda.add(labelImage);*/
 
 
+
+        /*labelImage = new JLabel(new ImageIcon("images/barco2.jpg"));
+
+        panel1Izquierda.add(labelImage);*/
+
         
 
-    
 
+        
         JPanel panelBotonNuevaSesion = new JPanel();
         panelBotonNuevaSesion.setBackground(new Color(0, 0, 51));
         JButton botonNuevaSesion = new JButton("Crear nueva sesion");
