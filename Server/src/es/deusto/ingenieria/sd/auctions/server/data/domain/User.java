@@ -1,5 +1,7 @@
 package es.deusto.ingenieria.sd.auctions.server.data.domain;
 
+import java.util.List;
+
 public class User {
 	private String type;
 	private String email;
@@ -10,9 +12,12 @@ public class User {
 	private int freq;
 	private int maxFreq;
 	private int restFreq;
+	private List<Session> sessions;
 	
+	
+
 	public User(String type, String email, String name, double weight, double height, String birthDate, int freq, int maxFreq,
-			int restFreq) {
+			int restFreq, List<Session> sessions) {
 		super();
 		this.type = type;
 		this.email = email;
@@ -23,6 +28,7 @@ public class User {
 		this.freq = freq;
 		this.maxFreq = maxFreq;
 		this.restFreq = restFreq;
+		this.sessions = sessions;
 	}
 	
 	public User() {
@@ -36,6 +42,7 @@ public class User {
 		this.freq = 0;
 		this.maxFreq = 0;
 		this.restFreq = 0;
+		this.sessions = null;
 	}
 
 	public String getType() {
@@ -109,11 +116,20 @@ public class User {
 	public void setRestFreq(int restFreq) {
 		this.restFreq = restFreq;
 	}
+	
+	public List<Session> getSessions() {
+		return sessions;
+	}
 
+	public void setSessions(List<Session> sessions) {
+		this.sessions = sessions;
+	}
+	
 	@Override
 	public String toString() {
 		return "User [type=" + type + ", email=" + email + ", name=" + name + ", weight=" + weight + ", height="
-				+ height + ", birthDate=" + birthDate + ", freq=" + freq + ", maxFreq=" + maxFreq + ", restFreq=" + restFreq + "]";
+				+ height + ", birthDate=" + birthDate + ", freq=" + freq + ", maxFreq=" + maxFreq + ", restFreq="
+				+ restFreq + ", sessions=" + sessions + "]";
 	}
 	
 }
