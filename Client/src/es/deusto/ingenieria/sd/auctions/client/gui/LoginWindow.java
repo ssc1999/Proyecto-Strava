@@ -351,7 +351,7 @@ public class LoginWindow extends JFrame{
             public void actionPerformed(ActionEvent arg0) {
                 try {
                     new SessionWindow();
-                    dispose();;
+                    dispose();
                 } catch (Exception e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();

@@ -46,7 +46,7 @@ public class SessionWindow extends JFrame{
         panel1.setBackground(new Color(0, 0, 51));
         panel1Izquierda = new JPanel(new BorderLayout());
         panel1Izquierda.setBackground(new Color(0, 0, 51));
-        panel1Derecha = new JPanel(new GridLayout(2, 1));
+        panel1Derecha = new JPanel(new GridLayout(3, 1));
         panel1Derecha.setBackground(new Color(0, 0, 51));
        
         panel2 = new JPanel(new GridLayout(7, 1));
@@ -124,8 +124,32 @@ public class SessionWindow extends JFrame{
             }
         });
 
+        JPanel panelBotonCerrarSesion = new JPanel();
+        panelBotonCerrarSesion.setBackground(new Color(0, 0, 51));
+        JButton botonCerrarSesion = new JButton("Cerrar sesión");
+        botonCerrarSesion.setPreferredSize(new Dimension(110, 25));
+        botonCerrarSesion.setForeground(Color.WHITE);
+        botonCerrarSesion.setFont(new Font("Yu Gothic UI", Font.PLAIN, 12));
+        botonCerrarSesion.setBackground(Color.DARK_GRAY);
+        panelBotonCerrarSesion.add(botonCerrarSesion);
+
+        botonCerrarSesion.addActionListener(new ActionListener() {
+				
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                try {
+                    new LoginWindow();
+                    dispose();
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        });
+
         panel1Derecha.add(panelBotonNuevaSesion);
         panel1Derecha.add(panelBotonVerSesiones);
+        panel1Derecha.add(panelBotonCerrarSesion);
 
         panel1.add(panel1Izquierda, BorderLayout.WEST);
         panel1.add(panel1Derecha, BorderLayout.EAST);
@@ -193,7 +217,8 @@ public class SessionWindow extends JFrame{
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 try {
-                    System.exit(0);
+                    panel2.setVisible(false);
+                    panel1.setVisible(true);
                 } catch (Exception e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
