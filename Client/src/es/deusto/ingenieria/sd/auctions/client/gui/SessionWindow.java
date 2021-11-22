@@ -75,7 +75,7 @@ public class SessionWindow extends JFrame{
         panelBotonNuevaSesion.setBackground(new Color(0, 0, 51));
         JButton botonNuevaSesion = new JButton("Crear nueva sesion");
         botonNuevaSesion.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-        botonNuevaSesion.setBackground(new Color(0, 0, 51));
+        botonNuevaSesion.setBackground(Color.DARK_GRAY);
         botonNuevaSesion.setForeground(Color.WHITE);
         botonNuevaSesion.setPreferredSize(new Dimension(200, 50));
         panelBotonNuevaSesion.add(botonNuevaSesion);
@@ -100,7 +100,7 @@ public class SessionWindow extends JFrame{
         botonVerSesiones.setPreferredSize(new Dimension(200, 50));
         botonVerSesiones.setForeground(Color.WHITE);
         botonVerSesiones.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-        botonVerSesiones.setBackground(new Color(0, 0, 51));
+        botonVerSesiones.setBackground(Color.DARK_GRAY);
         panelBotonVerSesiones.add(botonVerSesiones);
 
         botonVerSesiones.addActionListener(new ActionListener() {

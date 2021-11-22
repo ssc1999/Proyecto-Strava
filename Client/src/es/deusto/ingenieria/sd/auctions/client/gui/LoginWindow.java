@@ -71,7 +71,7 @@ public class LoginWindow extends JFrame{
         panelBotonStravaLogin.setBackground(new Color(0, 0, 51));
         JButton botonStravaLogin = new JButton("Strava Login");
         botonStravaLogin.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-        botonStravaLogin.setBackground(new Color(0, 0, 51));
+        botonStravaLogin.setBackground(Color.DARK_GRAY);
         botonStravaLogin.setForeground(Color.WHITE);
         botonStravaLogin.setPreferredSize(new Dimension(300, 50));
         panelBotonStravaLogin.add(botonStravaLogin);
@@ -96,7 +96,7 @@ public class LoginWindow extends JFrame{
         panelBotonGoogleLogin.setBackground(new Color(0, 0, 51));
         JButton botonGoogleLogin = new JButton("Google Login");
         botonGoogleLogin.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-        botonGoogleLogin.setBackground(new Color(0, 0, 51));
+        botonGoogleLogin.setBackground(Color.DARK_GRAY);
         botonGoogleLogin.setForeground(Color.WHITE);
         botonGoogleLogin.setPreferredSize(new Dimension(160, 25));
         panelBotonGoogleLogin.add(botonGoogleLogin);
@@ -119,7 +119,7 @@ public class LoginWindow extends JFrame{
         panelBotonFacebookLogin.setBackground(new Color(0, 0, 51));
         JButton botonFacebookLogin = new JButton("Facebook Login");
         botonFacebookLogin.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-        botonFacebookLogin.setBackground(new Color(0, 0, 51));
+        botonFacebookLogin.setBackground(Color.DARK_GRAY);
         botonFacebookLogin.setForeground(Color.WHITE);
         botonFacebookLogin.setPreferredSize(new Dimension(160, 25));
         panelBotonFacebookLogin.add(botonFacebookLogin);
@@ -145,7 +145,7 @@ public class LoginWindow extends JFrame{
         panelBotonRegistrarse.setBackground(new Color(0, 0, 51));
         JButton botonRegistrarse = new JButton("Registrarse");
         botonRegistrarse.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-        botonRegistrarse.setBackground(new Color(0, 0, 51));
+        botonRegistrarse.setBackground(Color.DARK_GRAY);
         botonRegistrarse.setForeground(Color.WHITE);
         botonRegistrarse.setPreferredSize(new Dimension(150, 40));
         panelBotonRegistrarse.add(botonRegistrarse);
