@@ -174,63 +174,95 @@ public class LoginWindow extends JFrame{
 
         // panel 2
 
-        JLabel atributo1 = new JLabel("Atributo 1");
+        JPanel panelLabelAtributo1 = new JPanel();
+        panelLabelAtributo1.setBackground(new Color(0, 0, 51));
+        JLabel labelAtributo1 = new JLabel("Atributo 1");
+        labelAtributo1.setForeground(Color.WHITE);
+        panelLabelAtributo1.add(labelAtributo1);
 
         JPanel panelTextAtributo1 = new JPanel(); 
+        panelTextAtributo1.setBackground(new Color(0, 0, 51));
         JTextField textAtributo1 = new JTextField();
         textAtributo1.setPreferredSize(new Dimension(150, 25));
         panelTextAtributo1.add(textAtributo1);
 
-        JLabel atributo2 = new JLabel("Atributo 2");
+        JPanel panelLabelAtributo2 = new JPanel();
+        panelLabelAtributo2.setBackground(new Color(0, 0, 51));
+        JLabel labelAtributo2 = new JLabel("Atributo 2");
+        labelAtributo2.setForeground(Color.WHITE);
+        panelLabelAtributo2.add(labelAtributo2);
 
         JPanel panelTextAtributo2 = new JPanel(); 
+        panelTextAtributo2.setBackground(new Color(0, 0, 51));
         JTextField textAtributo2 = new JTextField();
         textAtributo2.setPreferredSize(new Dimension(150, 25));
         panelTextAtributo2.add(textAtributo2);
 
-        JLabel atributo3 = new JLabel("Atributo 3");
+        JPanel panelLabelAtributo3 = new JPanel();
+        panelLabelAtributo3.setBackground(new Color(0, 0, 51));
+        JLabel labelAtributo3 = new JLabel("Atributo 3");
+        labelAtributo3.setForeground(Color.WHITE);
+        panelLabelAtributo3.add(labelAtributo3);
 
         JPanel panelTextAtributo3 = new JPanel(); 
+        panelTextAtributo3.setBackground(new Color(0, 0, 51));
         JTextField textAtributo3 = new JTextField();
         textAtributo3.setPreferredSize(new Dimension(150, 25));
         panelTextAtributo3.add(textAtributo3);
 
-        JLabel atributo4 = new JLabel("Atributo 4");
+        JPanel panelLabelAtributo4 = new JPanel();
+        panelLabelAtributo4.setBackground(new Color(0, 0, 51));
+        JLabel labelAtributo4 = new JLabel("Atributo 4");
+        labelAtributo4.setForeground(Color.WHITE);
+        panelLabelAtributo4.add(labelAtributo4);
 
         JPanel panelTextAtributo4 = new JPanel(); 
+        panelTextAtributo4.setBackground(new Color(0, 0, 51));
         JTextField textAtributo4 = new JTextField();
         textAtributo4.setPreferredSize(new Dimension(150, 25));
         panelTextAtributo4.add(textAtributo4);
 
-        JLabel atributo5 = new JLabel("Atributo 5");
+        JPanel panelLabelAtributo5 = new JPanel();
+        panelLabelAtributo5.setBackground(new Color(0, 0, 51));
+        JLabel labelAtributo5 = new JLabel("Atributo 5");
+        labelAtributo5.setForeground(Color.WHITE);
+        panelLabelAtributo5.add(labelAtributo5);
 
         JPanel panelTextAtributo5 = new JPanel(); 
+        panelTextAtributo5.setBackground(new Color(0, 0, 51));
         JTextField textAtributo5 = new JTextField();
         textAtributo5.setPreferredSize(new Dimension(150, 25));
         panelTextAtributo5.add(textAtributo5);
 
-        JLabel atributo6 = new JLabel("Atributo 6");
+        JPanel panelLabelAtributo6 = new JPanel();
+        panelLabelAtributo6.setBackground(new Color(0, 0, 51));
+        JLabel labelAtributo6 = new JLabel("Atributo 6");
+        labelAtributo6.setForeground(Color.WHITE);
+        panelLabelAtributo6.add(labelAtributo6);
 
         JPanel panelTextAtributo6 = new JPanel(); 
+        panelTextAtributo6.setBackground(new Color(0, 0, 51));
         JTextField textAtributo6 = new JTextField();
         textAtributo6.setPreferredSize(new Dimension(150, 25));
         panelTextAtributo6.add(textAtributo6);
 
-        panel2Arriba.add(atributo1);
+        panel2Arriba.add(panelLabelAtributo1);
         panel2Arriba.add(panelTextAtributo1);
-        panel2Arriba.add(atributo2);
+        panel2Arriba.add(panelLabelAtributo2);
         panel2Arriba.add(panelTextAtributo2);
-        panel2Arriba.add(atributo3);
+        panel2Arriba.add(panelLabelAtributo3);
         panel2Arriba.add(panelTextAtributo3);
-        panel2Arriba.add(atributo4);
+        panel2Arriba.add(panelLabelAtributo4);
         panel2Arriba.add(panelTextAtributo4);
-        panel2Arriba.add(atributo5);
+        panel2Arriba.add(panelLabelAtributo5);
         panel2Arriba.add(panelTextAtributo5);
-        panel2Arriba.add(atributo6);
+        panel2Arriba.add(panelLabelAtributo6);
         panel2Arriba.add(panelTextAtributo6);
 
         JPanel panelBotonRegistrarse2 = new JPanel();
+        panelBotonRegistrarse2.setBackground(new Color(0, 0, 51));
         JButton botonRegistrarse2 = new JButton("Registrarse");
+        botonRegistrarse2.setBackground(Color.LIGHT_GRAY);
         botonRegistrarse2.setPreferredSize(new Dimension(150, 25));
         panelBotonRegistrarse2.add(botonRegistrarse2);
 
@@ -248,7 +280,9 @@ public class LoginWindow extends JFrame{
         });
 
         JPanel panelBotonAtras = new JPanel();
+        panelBotonAtras.setBackground(new Color(0, 0, 51));
         JButton botonAtras = new JButton("Atrás");
+        botonAtras.setBackground(Color.LIGHT_GRAY);
         botonAtras.setPreferredSize(new Dimension(150, 25));
         panelBotonAtras.add(botonAtras);
 
@@ -275,19 +309,25 @@ public class LoginWindow extends JFrame{
         // panel 3
 
         JPanel panelLabelEmail = new JPanel(); 
-        JLabel email = new JLabel("Email:");
-        panelLabelEmail.add(email);
+        panelLabelEmail.setBackground(new Color(0, 0, 51));
+        JLabel labelEmail = new JLabel("Email:");
+        labelEmail.setForeground(Color.WHITE);
+        panelLabelEmail.add(labelEmail);
 
-        JPanel panelTextEmail = new JPanel(); 
+        JPanel panelTextEmail = new JPanel();
+        panelTextEmail.setBackground(new Color(0, 0, 51));
         JTextField textEmail = new JTextField();
         textEmail.setPreferredSize(new Dimension(150, 25));
         panelTextEmail.add(textEmail);
 
-        JPanel panelLabelContrasenya = new JPanel(); 
-        JLabel contrasenya = new JLabel("Contraseña:");
-        panelLabelContrasenya.add(contrasenya);
+        JPanel panelLabelContrasenya = new JPanel();
+        panelLabelContrasenya.setBackground(new Color(0, 0, 51));
+        JLabel labelContrasenya = new JLabel("Contraseña:");
+        labelContrasenya.setForeground(Color.WHITE);
+        panelLabelContrasenya.add(labelContrasenya);
 
-        JPanel panelTextContrasenya = new JPanel(); 
+        JPanel panelTextContrasenya = new JPanel();
+        panelTextContrasenya.setBackground(new Color(0, 0, 51));
         JTextField textContrasenya = new JPasswordField();
         textContrasenya.setPreferredSize(new Dimension(150, 25));
         panelTextContrasenya.add(textContrasenya);
@@ -298,7 +338,9 @@ public class LoginWindow extends JFrame{
         panel3Arriba.add(panelTextContrasenya);
 
         JPanel panelBotonAceptar = new JPanel();
+        panelBotonAceptar.setBackground(new Color(0, 0, 51));
         JButton botonAceptar = new JButton("Aceptar");
+        botonAceptar.setBackground(Color.LIGHT_GRAY);
         botonAceptar.setPreferredSize(new Dimension(150, 25));
         panelBotonAceptar.add(botonAceptar);
 
@@ -316,7 +358,9 @@ public class LoginWindow extends JFrame{
         });
 
         JPanel panelBotonAtras2 = new JPanel();
+        panelBotonAtras2.setBackground(new Color(0, 0, 51));
         JButton botonAtras2 = new JButton("Atrás");
+        botonAtras2.setBackground(Color.LIGHT_GRAY);
         botonAtras2.setPreferredSize(new Dimension(150, 25));
         panelBotonAtras2.add(botonAtras2);
 
