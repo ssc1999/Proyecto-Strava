@@ -271,8 +271,8 @@ public class LoginWindow extends JFrame{
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 try {
-                    new SessionWindow();
-                    dispose();
+                    panel2.setVisible(false);
+                    panel1.setVisible(true);
                 } catch (Exception e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
