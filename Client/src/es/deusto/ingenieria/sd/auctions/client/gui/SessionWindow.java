@@ -299,7 +299,8 @@ public class SessionWindow extends JFrame{
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 try {
-                    System.exit(0);
+                    panel3.setVisible(false);
+                    panel1.setVisible(true);
                 } catch (Exception e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();

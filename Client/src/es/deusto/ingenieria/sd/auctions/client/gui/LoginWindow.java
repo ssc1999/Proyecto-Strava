@@ -350,7 +350,8 @@ public class LoginWindow extends JFrame{
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 try {
-                    System.exit(0);
+                    new SessionWindow();
+                    dispose();;
                 } catch (Exception e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
