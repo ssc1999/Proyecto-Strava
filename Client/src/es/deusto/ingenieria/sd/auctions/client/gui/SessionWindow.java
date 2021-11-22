@@ -19,6 +19,8 @@ public class SessionWindow extends JFrame{
     private JPanel panel1Derecha;
 
     private JPanel panel2;
+    private JPanel panel2Arriba;
+    private JPanel panel2Abajo;
     private JScrollPane scroll;
 
     private JPanel panel3;
@@ -46,14 +48,16 @@ public class SessionWindow extends JFrame{
         panel1Derecha.setBackground(new Color(0, 0, 51));
        
         panel2 = new JPanel(new GridLayout(7, 1));
-        scroll = new JScrollPane(panel2);
+        panel2Arriba = new JPanel(new GridLayout(5, 1));
+        panel2Abajo = new JPanel(new GridLayout(1, 2));
+        scroll = new JScrollPane(panel2Arriba); // scroll --> panel2Arriba
        
         panel3 = new JPanel(new BorderLayout());
         panel3Arriba = new JPanel(new GridLayout(4, 2));
         panel3Abajo = new JPanel(new GridLayout(1, 2));
 
         contentPane.add(panel1);
-        contentPane.add(scroll); // panel2
+        contentPane.add(panel2); // panel2
         contentPane.add(panel3);
 
         // panel 1
@@ -108,7 +112,7 @@ public class SessionWindow extends JFrame{
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 try {
-                    scroll.setVisible(true);
+                    panel2.setVisible(true);
                     panel1.setVisible(false);
                 } catch (Exception e) {
                     // TODO Auto-generated catch block
@@ -129,11 +133,14 @@ public class SessionWindow extends JFrame{
 
         for (int i = 1; i <= numSesiones; i++) {
             JPanel panelBotonSesion = new JPanel();
+            panelBotonSesion.setBackground(new Color(0, 0, 51));
             JButton botonSesion = new JButton("Sesión " + i);
+            botonSesion.setBackground(Color.DARK_GRAY);
+            botonSesion.setForeground(Color.WHITE);
             botonSesion.setPreferredSize(new Dimension(150, 25));
             panelBotonSesion.add(botonSesion);
 
-            panel2.add(panelBotonSesion);
+            panel2Arriba.add(panelBotonSesion);
 
             botonSesion.addActionListener(new ActionListener() {
 				
@@ -141,7 +148,7 @@ public class SessionWindow extends JFrame{
                 public void actionPerformed(ActionEvent arg0) {
                     try {
                         panel3.setVisible(true);
-                        scroll.setVisible(false);
+                        panel2.setVisible(false);
                     } catch (Exception e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
@@ -151,8 +158,10 @@ public class SessionWindow extends JFrame{
         }
 
         JPanel panelBotonAtras = new JPanel();
+        panelBotonAtras.setBackground(new Color(0, 0, 51));
         JButton botonAtras = new JButton("Atrás");
         botonAtras.setPreferredSize(new Dimension(150, 25));
+        botonAtras.setBackground(Color.LIGHT_GRAY);
         panelBotonAtras.add(botonAtras);
 
         botonAtras.addActionListener(new ActionListener() {
@@ -160,7 +169,7 @@ public class SessionWindow extends JFrame{
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 try {
-                    scroll.setVisible(false);
+                    panel2.setVisible(false);
                     panel1.setVisible(true);
                 } catch (Exception e) {
                     // TODO Auto-generated catch block
@@ -170,7 +179,9 @@ public class SessionWindow extends JFrame{
         });
 
         JPanel panelBotonAceptar = new JPanel();
+        panelBotonAceptar.setBackground(new Color(0, 0, 51));
         JButton botonAceptar = new JButton("Aceptar");
+        botonAceptar.setBackground(Color.LIGHT_GRAY);
         botonAceptar.setPreferredSize(new Dimension(150, 25));
         panelBotonAceptar.add(botonAceptar);
 
@@ -187,51 +198,76 @@ public class SessionWindow extends JFrame{
             }
         });
 
-        panel2.add(panelBotonAceptar);
-        panel2.add(panelBotonAtras);
+        panel2Abajo.add(panelBotonAtras);
+        panel2Abajo.add(panelBotonAceptar);
+        
+        panel2.add(scroll, BorderLayout.NORTH);
+        panel2.add(panel2Abajo, BorderLayout.SOUTH);
 
         // panel 3
 
-        JLabel atributo1 = new JLabel("Atributo 1");
+        JPanel panelLabelAtributo1 = new JPanel();
+        panelLabelAtributo1.setBackground(new Color(0, 0, 51));
+        JLabel labelAtributo1 = new JLabel("Atributo 1");
+        labelAtributo1.setForeground(Color.WHITE);
+        panelLabelAtributo1.add(labelAtributo1);
 
         JPanel panelTextAtributo1 = new JPanel(); 
+        panelTextAtributo1.setBackground(new Color(0, 0, 51));
         JTextField textAtributo1 = new JTextField();
         textAtributo1.setPreferredSize(new Dimension(150, 25));
         panelTextAtributo1.add(textAtributo1);
 
-        JLabel atributo2 = new JLabel("Atributo 2");
+        JPanel panelLabelAtributo2 = new JPanel();
+        panelLabelAtributo2.setBackground(new Color(0, 0, 51));
+        JLabel labelAtributo2 = new JLabel("Atributo 2");
+        labelAtributo2.setForeground(Color.WHITE);
+        panelLabelAtributo2.add(labelAtributo2);
 
         JPanel panelTextAtributo2 = new JPanel(); 
+        panelTextAtributo2.setBackground(new Color(0, 0, 51));
         JTextField textAtributo2 = new JTextField();
         textAtributo2.setPreferredSize(new Dimension(150, 25));
         panelTextAtributo2.add(textAtributo2);
 
-        JLabel atributo3 = new JLabel("Atributo 3");
+        JPanel panelLabelAtributo3 = new JPanel();
+        panelLabelAtributo3.setBackground(new Color(0, 0, 51));
+        JLabel labelAtributo3 = new JLabel("Atributo 3");
+        labelAtributo3.setForeground(Color.WHITE);
+        panelLabelAtributo3.add(labelAtributo3);
 
         JPanel panelTextAtributo3 = new JPanel(); 
+        panelTextAtributo3.setBackground(new Color(0, 0, 51));
         JTextField textAtributo3 = new JTextField();
         textAtributo3.setPreferredSize(new Dimension(150, 25));
         panelTextAtributo3.add(textAtributo3);
 
-        JLabel atributo4 = new JLabel("Atributo 4");
+        JPanel panelLabelAtributo4 = new JPanel();
+        panelLabelAtributo4.setBackground(new Color(0, 0, 51));
+        JLabel labelAtributo4 = new JLabel("Atributo 4");
+        labelAtributo4.setForeground(Color.WHITE);
+        panelLabelAtributo4.add(labelAtributo4);
 
         JPanel panelTextAtributo4 = new JPanel(); 
+        panelTextAtributo4.setBackground(new Color(0, 0, 51));
         JTextField textAtributo4 = new JTextField();
         textAtributo4.setPreferredSize(new Dimension(150, 25));
         panelTextAtributo4.add(textAtributo4);
 
-        panel3Arriba.add(atributo1);
+        panel3Arriba.add(panelLabelAtributo1);
         panel3Arriba.add(panelTextAtributo1);
-        panel3Arriba.add(atributo2);
+        panel3Arriba.add(panelLabelAtributo2);
         panel3Arriba.add(panelTextAtributo2);
-        panel3Arriba.add(atributo3);
+        panel3Arriba.add(panelLabelAtributo3);
         panel3Arriba.add(panelTextAtributo3);
-        panel3Arriba.add(atributo4);
+        panel3Arriba.add(panelLabelAtributo4);
         panel3Arriba.add(panelTextAtributo4);
 
         JPanel panelBotonAtras2 = new JPanel();
+        panelBotonAtras2.setBackground(new Color(0, 0, 51));
         JButton botonAtras2 = new JButton("Atrás");
         botonAtras2.setPreferredSize(new Dimension(150, 25));
+        botonAtras2.setBackground(Color.LIGHT_GRAY);
         panelBotonAtras2.add(botonAtras2);
 
         botonAtras2.addActionListener(new ActionListener() {
@@ -249,8 +285,10 @@ public class SessionWindow extends JFrame{
         });
 
         JPanel panelBotonAceptar2 = new JPanel();
+        panelBotonAceptar2.setBackground(new Color(0, 0, 51));
         JButton botonAceptar2 = new JButton("Aceptar");
         botonAceptar2.setPreferredSize(new Dimension(150, 25));
+        botonAceptar2.setBackground(Color.LIGHT_GRAY);
         panelBotonAceptar2.add(botonAceptar2);
 
         botonAceptar2.addActionListener(new ActionListener() {
@@ -276,7 +314,7 @@ public class SessionWindow extends JFrame{
 
         contentPane.setVisible(true);
         panel1.setVisible(true);
-        scroll.setVisible(false); // panel2
+        panel2.setVisible(false); // panel2
         panel3.setVisible(false);
     }
 
