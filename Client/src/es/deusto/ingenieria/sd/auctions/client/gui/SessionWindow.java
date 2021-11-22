@@ -53,6 +53,7 @@ public class SessionWindow extends JFrame{
         panel2Arriba = new JPanel(new GridLayout(numSesiones, 1));
         panel2Abajo = new JPanel(new GridLayout(1, 2));
         scroll = new JScrollPane(panel2Arriba); // scroll --> panel2Arriba
+        scroll.setPreferredSize(new Dimension(100, 240));
        
         panel3 = new JPanel(new BorderLayout());
         panel3Arriba = new JPanel(new GridLayout(4, 2));
