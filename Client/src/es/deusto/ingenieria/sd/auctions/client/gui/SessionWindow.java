@@ -1,19 +1,22 @@
 package es.deusto.ingenieria.sd.auctions.client.gui;
 
-import javax.swing.JFrame; 
+import javax.swing.JFrame;
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
+import java.awt.image.BufferedImage;
+import java.io.File;
 
 public class SessionWindow extends JFrame{
 
     private JPanel contentPane;
 
     private JPanel panel1;
-    private JPanel panel1Arriba;
-    private JPanel panel1Abajo;
+    private JPanel panel1Izquierda;
+    private JPanel panel1Derecha;
 
     private JPanel panel2;
     private JScrollPane scroll;
@@ -22,7 +25,8 @@ public class SessionWindow extends JFrame{
     private JPanel panel3Arriba;
     private JPanel panel3Abajo;
 
-    public SessionWindow() {
+    public SessionWindow() throws IOException {
+        setBackground(new Color(0, 0, 51));
 
         setTitle("Session Window");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -31,11 +35,15 @@ public class SessionWindow extends JFrame{
         pack();
 
         contentPane = new JPanel();
+        contentPane.setBackground(new Color(0, 0, 51));
         setContentPane(contentPane);
 
         panel1 = new JPanel(new BorderLayout());
-        panel1Arriba = new JPanel(new BorderLayout());
-        panel1Abajo = new JPanel(new BorderLayout());
+        panel1.setBackground(new Color(0, 0, 51));
+        panel1Izquierda = new JPanel(new BorderLayout());
+        panel1Izquierda.setBackground(new Color(0, 0, 51));
+        panel1Derecha = new JPanel(new GridLayout(2, 1));
+        panel1Derecha.setBackground(new Color(0, 0, 51));
        
         panel2 = new JPanel(new GridLayout(7, 1));
         scroll = new JScrollPane(panel2);
@@ -50,9 +58,26 @@ public class SessionWindow extends JFrame{
 
         // panel 1
 
+        /*//JPanel panelLabelImage = new JPanel();
+        BufferedImage bufferedImage = ImageIO.read(new File("images/barco2.jpg"));
+        Image image = bufferedImage.getScaledInstance(400, 200, Image.SCALE_DEFAULT);
+		JLabel labelImage = new JLabel(new ImageIcon(image));
+        //panelLabelImage.add(labelImage);
+
+        panel1Izquierda.add(labelImage);*/
+
+
+        
+
+    
+
         JPanel panelBotonNuevaSesion = new JPanel();
+        panelBotonNuevaSesion.setBackground(new Color(0, 0, 51));
         JButton botonNuevaSesion = new JButton("Crear nueva sesion");
-        botonNuevaSesion.setPreferredSize(new Dimension(150, 25));
+        botonNuevaSesion.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+        botonNuevaSesion.setBackground(new Color(0, 0, 51));
+        botonNuevaSesion.setForeground(Color.WHITE);
+        botonNuevaSesion.setPreferredSize(new Dimension(200, 50));
         panelBotonNuevaSesion.add(botonNuevaSesion);
 
         botonNuevaSesion.addActionListener(new ActionListener() {
@@ -70,8 +95,12 @@ public class SessionWindow extends JFrame{
         });
 
         JPanel panelBotonVerSesiones = new JPanel();
+        panelBotonVerSesiones.setBackground(new Color(0, 0, 51));
         JButton botonVerSesiones = new JButton("Ver sesiones");
-        botonVerSesiones.setPreferredSize(new Dimension(150, 25));
+        botonVerSesiones.setPreferredSize(new Dimension(200, 50));
+        botonVerSesiones.setForeground(Color.WHITE);
+        botonVerSesiones.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+        botonVerSesiones.setBackground(new Color(0, 0, 51));
         panelBotonVerSesiones.add(botonVerSesiones);
 
         botonVerSesiones.addActionListener(new ActionListener() {
@@ -88,11 +117,11 @@ public class SessionWindow extends JFrame{
             }
         });
 
-        panel1Arriba.add(panelBotonNuevaSesion);
-        panel1Abajo.add(panelBotonVerSesiones);
+        panel1Derecha.add(panelBotonNuevaSesion);
+        panel1Derecha.add(panelBotonVerSesiones);
 
-        panel1.add(panel1Arriba, BorderLayout.NORTH);
-        panel1.add(panel1Abajo, BorderLayout.SOUTH);
+        panel1.add(panel1Izquierda, BorderLayout.WEST);
+        panel1.add(panel1Derecha, BorderLayout.EAST);
 
         // panel 2
 
