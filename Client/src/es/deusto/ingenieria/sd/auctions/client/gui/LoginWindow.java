@@ -174,90 +174,90 @@ public class LoginWindow extends JFrame{
 
         // panel 2
 
-        JPanel panelLabelAtributo1 = new JPanel();
-        panelLabelAtributo1.setBackground(new Color(0, 0, 51));
-        JLabel labelAtributo1 = new JLabel("Atributo 1");
-        labelAtributo1.setForeground(Color.WHITE);
-        panelLabelAtributo1.add(labelAtributo1);
+        JPanel panelLabelType = new JPanel();
+        panelLabelType.setBackground(new Color(0, 0, 51));
+        JLabel labelType = new JLabel("Tipo: ");
+        labelType.setForeground(Color.WHITE);
+        panelLabelType.add(labelType);
 
-        JPanel panelTextAtributo1 = new JPanel(); 
-        panelTextAtributo1.setBackground(new Color(0, 0, 51));
-        JTextField textAtributo1 = new JTextField();
-        textAtributo1.setPreferredSize(new Dimension(150, 25));
-        panelTextAtributo1.add(textAtributo1);
+        JPanel panelTextType = new JPanel(); 
+        panelTextType.setBackground(new Color(0, 0, 51));
+        JTextField textType = new JTextField();
+        textType.setPreferredSize(new Dimension(150, 25));
+        panelTextType.add(textType);
 
-        JPanel panelLabelAtributo2 = new JPanel();
-        panelLabelAtributo2.setBackground(new Color(0, 0, 51));
-        JLabel labelAtributo2 = new JLabel("Atributo 2");
-        labelAtributo2.setForeground(Color.WHITE);
-        panelLabelAtributo2.add(labelAtributo2);
+        JPanel panelLabelEmail = new JPanel();
+        panelLabelEmail.setBackground(new Color(0, 0, 51));
+        JLabel labelEmail = new JLabel("Email: ");
+        labelEmail.setForeground(Color.WHITE);
+        panelLabelEmail.add(labelEmail);
 
-        JPanel panelTextAtributo2 = new JPanel(); 
-        panelTextAtributo2.setBackground(new Color(0, 0, 51));
-        JTextField textAtributo2 = new JTextField();
-        textAtributo2.setPreferredSize(new Dimension(150, 25));
-        panelTextAtributo2.add(textAtributo2);
+        JPanel panelTextEmail = new JPanel(); 
+        panelTextEmail.setBackground(new Color(0, 0, 51));
+        JTextField textEmail = new JTextField();
+        textEmail.setPreferredSize(new Dimension(150, 25));
+        panelTextEmail.add(textEmail);
 
-        JPanel panelLabelAtributo3 = new JPanel();
-        panelLabelAtributo3.setBackground(new Color(0, 0, 51));
-        JLabel labelAtributo3 = new JLabel("Atributo 3");
-        labelAtributo3.setForeground(Color.WHITE);
-        panelLabelAtributo3.add(labelAtributo3);
+        JPanel panelLabelName = new JPanel();
+        panelLabelName.setBackground(new Color(0, 0, 51));
+        JLabel labelName = new JLabel("Nombre: ");
+        labelName.setForeground(Color.WHITE);
+        panelLabelName.add(labelName);
 
-        JPanel panelTextAtributo3 = new JPanel(); 
-        panelTextAtributo3.setBackground(new Color(0, 0, 51));
-        JTextField textAtributo3 = new JTextField();
-        textAtributo3.setPreferredSize(new Dimension(150, 25));
-        panelTextAtributo3.add(textAtributo3);
+        JPanel panelTextName = new JPanel(); 
+        panelTextName.setBackground(new Color(0, 0, 51));
+        JTextField textName = new JTextField();
+        textName.setPreferredSize(new Dimension(150, 25));
+        panelTextName.add(textName);
 
-        JPanel panelLabelAtributo4 = new JPanel();
-        panelLabelAtributo4.setBackground(new Color(0, 0, 51));
-        JLabel labelAtributo4 = new JLabel("Atributo 4");
-        labelAtributo4.setForeground(Color.WHITE);
-        panelLabelAtributo4.add(labelAtributo4);
+        JPanel panelLabelWeight = new JPanel();
+        panelLabelWeight.setBackground(new Color(0, 0, 51));
+        JLabel labelWeight = new JLabel("Peso: ");
+        labelWeight.setForeground(Color.WHITE);
+        panelLabelWeight.add(labelWeight);
 
-        JPanel panelTextAtributo4 = new JPanel(); 
-        panelTextAtributo4.setBackground(new Color(0, 0, 51));
-        JTextField textAtributo4 = new JTextField();
-        textAtributo4.setPreferredSize(new Dimension(150, 25));
-        panelTextAtributo4.add(textAtributo4);
+        JPanel panelTextWeight = new JPanel(); 
+        panelTextWeight.setBackground(new Color(0, 0, 51));
+        JTextField textWeight = new JTextField();
+        textWeight.setPreferredSize(new Dimension(150, 25));
+        panelTextWeight.add(textWeight);
 
-        JPanel panelLabelAtributo5 = new JPanel();
-        panelLabelAtributo5.setBackground(new Color(0, 0, 51));
-        JLabel labelAtributo5 = new JLabel("Atributo 5");
-        labelAtributo5.setForeground(Color.WHITE);
-        panelLabelAtributo5.add(labelAtributo5);
+        JPanel panelLabelHeight = new JPanel();
+        panelLabelHeight.setBackground(new Color(0, 0, 51));
+        JLabel labelHeight = new JLabel("Altura: ");
+        labelHeight.setForeground(Color.WHITE);
+        panelLabelHeight.add(labelHeight);
 
-        JPanel panelTextAtributo5 = new JPanel(); 
-        panelTextAtributo5.setBackground(new Color(0, 0, 51));
-        JTextField textAtributo5 = new JTextField();
-        textAtributo5.setPreferredSize(new Dimension(150, 25));
-        panelTextAtributo5.add(textAtributo5);
+        JPanel panelTextHeight = new JPanel(); 
+        panelTextHeight.setBackground(new Color(0, 0, 51));
+        JTextField textHeight = new JTextField();
+        textHeight.setPreferredSize(new Dimension(150, 25));
+        panelTextHeight.add(textHeight);
 
-        JPanel panelLabelAtributo6 = new JPanel();
-        panelLabelAtributo6.setBackground(new Color(0, 0, 51));
-        JLabel labelAtributo6 = new JLabel("Atributo 6");
-        labelAtributo6.setForeground(Color.WHITE);
-        panelLabelAtributo6.add(labelAtributo6);
+        JPanel panelLabelBirthDate = new JPanel();
+        panelLabelBirthDate.setBackground(new Color(0, 0, 51));
+        JLabel labelBirthDate = new JLabel("Fecha de nacimiento: ");
+        labelBirthDate.setForeground(Color.WHITE);
+        panelLabelBirthDate.add(labelBirthDate);
 
-        JPanel panelTextAtributo6 = new JPanel(); 
-        panelTextAtributo6.setBackground(new Color(0, 0, 51));
-        JTextField textAtributo6 = new JTextField();
-        textAtributo6.setPreferredSize(new Dimension(150, 25));
-        panelTextAtributo6.add(textAtributo6);
+        JPanel panelTextBirthDate = new JPanel(); 
+        panelTextBirthDate.setBackground(new Color(0, 0, 51));
+        JTextField textBirthDate = new JTextField();
+        textBirthDate.setPreferredSize(new Dimension(150, 25));
+        panelTextBirthDate.add(textBirthDate);
 
-        panel2Arriba.add(panelLabelAtributo1);
-        panel2Arriba.add(panelTextAtributo1);
-        panel2Arriba.add(panelLabelAtributo2);
-        panel2Arriba.add(panelTextAtributo2);
-        panel2Arriba.add(panelLabelAtributo3);
-        panel2Arriba.add(panelTextAtributo3);
-        panel2Arriba.add(panelLabelAtributo4);
-        panel2Arriba.add(panelTextAtributo4);
-        panel2Arriba.add(panelLabelAtributo5);
-        panel2Arriba.add(panelTextAtributo5);
-        panel2Arriba.add(panelLabelAtributo6);
-        panel2Arriba.add(panelTextAtributo6);
+        panel2Arriba.add(panelLabelType);
+        panel2Arriba.add(panelTextType);
+        panel2Arriba.add(panelLabelEmail);
+        panel2Arriba.add(panelTextEmail);
+        panel2Arriba.add(panelLabelName);
+        panel2Arriba.add(panelTextName);
+        panel2Arriba.add(panelLabelWeight);
+        panel2Arriba.add(panelTextWeight);
+        panel2Arriba.add(panelLabelHeight);
+        panel2Arriba.add(panelTextHeight);
+        panel2Arriba.add(panelLabelBirthDate);
+        panel2Arriba.add(panelTextBirthDate);
 
         JPanel panelBotonRegistrarse2 = new JPanel();
         panelBotonRegistrarse2.setBackground(new Color(0, 0, 51));
@@ -309,17 +309,17 @@ public class LoginWindow extends JFrame{
 
         // panel 3
 
-        JPanel panelLabelEmail = new JPanel(); 
-        panelLabelEmail.setBackground(new Color(0, 0, 51));
-        JLabel labelEmail = new JLabel("Email:");
-        labelEmail.setForeground(Color.WHITE);
-        panelLabelEmail.add(labelEmail);
+        JPanel panelLabelEmail2 = new JPanel(); 
+        panelLabelEmail2.setBackground(new Color(0, 0, 51));
+        JLabel labelEmail2 = new JLabel("Email:");
+        labelEmail2.setForeground(Color.WHITE);
+        panelLabelEmail2.add(labelEmail2);
 
-        JPanel panelTextEmail = new JPanel();
-        panelTextEmail.setBackground(new Color(0, 0, 51));
-        JTextField textEmail = new JTextField();
-        textEmail.setPreferredSize(new Dimension(150, 25));
-        panelTextEmail.add(textEmail);
+        JPanel panelTextEmail2 = new JPanel();
+        panelTextEmail2.setBackground(new Color(0, 0, 51));
+        JTextField textEmail2 = new JTextField();
+        textEmail2.setPreferredSize(new Dimension(150, 25));
+        panelTextEmail2.add(textEmail2);
 
         JPanel panelLabelContrasenya = new JPanel();
         panelLabelContrasenya.setBackground(new Color(0, 0, 51));
@@ -333,8 +333,8 @@ public class LoginWindow extends JFrame{
         textContrasenya.setPreferredSize(new Dimension(150, 25));
         panelTextContrasenya.add(textContrasenya);
 
-        panel3Arriba.add(panelLabelEmail);
-        panel3Arriba.add(panelTextEmail);
+        panel3Arriba.add(panelLabelEmail2);
+        panel3Arriba.add(panelTextEmail2);
         panel3Arriba.add(panelLabelContrasenya);
         panel3Arriba.add(panelTextContrasenya);
 
