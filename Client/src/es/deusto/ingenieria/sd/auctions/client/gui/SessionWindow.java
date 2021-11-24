@@ -56,7 +56,7 @@ public class SessionWindow extends JFrame{
         scroll.setPreferredSize(new Dimension(400, 250));
 
         panel3 = new JPanel(new BorderLayout());
-        panel3Arriba = new JPanel(new GridLayout(4, 2));
+        panel3Arriba = new JPanel(new GridLayout(7, 2));
         panel3Abajo = new JPanel(new GridLayout(1, 2));
 
         contentPane.add(panel1);
@@ -65,13 +65,13 @@ public class SessionWindow extends JFrame{
 
         // panel 1
 
-        BufferedImage bufferedImage = ImageIO.read(new File("images/barco2.jpg"));
+        /*BufferedImage bufferedImage = ImageIO.read(new File("images/barco2.jpg"));
         Image image = bufferedImage.getScaledInstance(200, 100, Image.SCALE_DEFAULT);
-		panel1Izquierda.add(new JLabel(new ImageIcon(image)));
+		panel1Izquierda.add(new JLabel(new ImageIcon(image)));*/
 
         JPanel panelBotonNuevaSesion = new JPanel();
         panelBotonNuevaSesion.setBackground(new Color(0, 0, 51));
-        JButton botonNuevaSesion = new JButton("Crear nueva sesion");
+        JButton botonNuevaSesion = new JButton("Crear nueva actividad"); // crear nueva sesión
         botonNuevaSesion.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
         botonNuevaSesion.setBackground(Color.DARK_GRAY);
         botonNuevaSesion.setForeground(Color.WHITE);
@@ -94,7 +94,7 @@ public class SessionWindow extends JFrame{
 
         JPanel panelBotonVerSesiones = new JPanel();
         panelBotonVerSesiones.setBackground(new Color(0, 0, 51));
-        JButton botonVerSesiones = new JButton("Ver sesiones");
+        JButton botonVerSesiones = new JButton("Ver actividades"); // ver sesión
         botonVerSesiones.setPreferredSize(new Dimension(200, 50));
         botonVerSesiones.setForeground(Color.WHITE);
         botonVerSesiones.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
@@ -152,7 +152,7 @@ public class SessionWindow extends JFrame{
         for (int i = 1; i <= numSesiones; i++) {
             JPanel panelBotonSesion = new JPanel();
             panelBotonSesion.setBackground(new Color(0, 0, 51));
-            JButton botonSesion = new JButton("Sesión " + i);
+            JButton botonSesion = new JButton("Actividad " + i);
             botonSesion.setBackground(Color.DARK_GRAY);
             botonSesion.setForeground(Color.WHITE);
             botonSesion.setPreferredSize(new Dimension(150, 25));
@@ -203,62 +203,104 @@ public class SessionWindow extends JFrame{
 
         // panel 3
 
-        JPanel panelLabelAtributo1 = new JPanel();
-        panelLabelAtributo1.setBackground(new Color(0, 0, 51));
-        JLabel labelAtributo1 = new JLabel("Atributo 1");
-        labelAtributo1.setForeground(Color.WHITE);
-        panelLabelAtributo1.add(labelAtributo1);
+        JPanel panelLabelId = new JPanel();
+        panelLabelId.setBackground(new Color(0, 0, 51));
+        JLabel labelId = new JLabel("Id: ");
+        labelId.setForeground(Color.WHITE);
+        panelLabelId.add(labelId);
 
-        JPanel panelTextAtributo1 = new JPanel(); 
-        panelTextAtributo1.setBackground(new Color(0, 0, 51));
-        JTextField textAtributo1 = new JTextField();
-        textAtributo1.setPreferredSize(new Dimension(150, 25));
-        panelTextAtributo1.add(textAtributo1);
+        JPanel panelTextId = new JPanel(); 
+        panelTextId.setBackground(new Color(0, 0, 51));
+        JTextField textId = new JTextField();
+        textId.setPreferredSize(new Dimension(150, 25));
+        panelTextId.add(textId);
 
-        JPanel panelLabelAtributo2 = new JPanel();
-        panelLabelAtributo2.setBackground(new Color(0, 0, 51));
-        JLabel labelAtributo2 = new JLabel("Atributo 2");
-        labelAtributo2.setForeground(Color.WHITE);
-        panelLabelAtributo2.add(labelAtributo2);
+        JPanel panelLabelTittle = new JPanel();
+        panelLabelTittle.setBackground(new Color(0, 0, 51));
+        JLabel labelTittle = new JLabel("Título: ");
+        labelTittle.setForeground(Color.WHITE);
+        panelLabelTittle.add(labelTittle);
 
-        JPanel panelTextAtributo2 = new JPanel(); 
-        panelTextAtributo2.setBackground(new Color(0, 0, 51));
-        JTextField textAtributo2 = new JTextField();
-        textAtributo2.setPreferredSize(new Dimension(150, 25));
-        panelTextAtributo2.add(textAtributo2);
+        JPanel panelTextTittle = new JPanel(); 
+        panelTextTittle.setBackground(new Color(0, 0, 51));
+        JTextField textTittle = new JTextField();
+        textTittle.setPreferredSize(new Dimension(150, 25));
+        panelTextTittle.add(textTittle);
 
-        JPanel panelLabelAtributo3 = new JPanel();
-        panelLabelAtributo3.setBackground(new Color(0, 0, 51));
-        JLabel labelAtributo3 = new JLabel("Atributo 3");
-        labelAtributo3.setForeground(Color.WHITE);
-        panelLabelAtributo3.add(labelAtributo3);
+        JPanel panelLabelSport = new JPanel();
+        panelLabelSport.setBackground(new Color(0, 0, 51));
+        JLabel labelSport = new JLabel("Deporte: ");
+        labelSport.setForeground(Color.WHITE);
+        panelLabelSport.add(labelSport);
 
-        JPanel panelTextAtributo3 = new JPanel(); 
-        panelTextAtributo3.setBackground(new Color(0, 0, 51));
-        JTextField textAtributo3 = new JTextField();
-        textAtributo3.setPreferredSize(new Dimension(150, 25));
-        panelTextAtributo3.add(textAtributo3);
+        JPanel panelTextSport = new JPanel(); 
+        panelTextSport.setBackground(new Color(0, 0, 51));
+        JTextField textSport = new JTextField();
+        textSport.setPreferredSize(new Dimension(150, 25));
+        panelTextSport.add(textSport);
 
-        JPanel panelLabelAtributo4 = new JPanel();
-        panelLabelAtributo4.setBackground(new Color(0, 0, 51));
-        JLabel labelAtributo4 = new JLabel("Atributo 4");
-        labelAtributo4.setForeground(Color.WHITE);
-        panelLabelAtributo4.add(labelAtributo4);
+        JPanel panelLabelDistance = new JPanel();
+        panelLabelDistance.setBackground(new Color(0, 0, 51));
+        JLabel labelDistance = new JLabel("Distancia: ");
+        labelDistance.setForeground(Color.WHITE);
+        panelLabelDistance.add(labelDistance);
 
-        JPanel panelTextAtributo4 = new JPanel(); 
-        panelTextAtributo4.setBackground(new Color(0, 0, 51));
-        JTextField textAtributo4 = new JTextField();
-        textAtributo4.setPreferredSize(new Dimension(150, 25));
-        panelTextAtributo4.add(textAtributo4);
+        JPanel panelTextDistance = new JPanel(); 
+        panelTextDistance.setBackground(new Color(0, 0, 51));
+        JTextField textDistance = new JTextField();
+        textDistance.setPreferredSize(new Dimension(150, 25));
+        panelTextDistance.add(textDistance);
 
-        panel3Arriba.add(panelLabelAtributo1);
-        panel3Arriba.add(panelTextAtributo1);
-        panel3Arriba.add(panelLabelAtributo2);
-        panel3Arriba.add(panelTextAtributo2);
-        panel3Arriba.add(panelLabelAtributo3);
-        panel3Arriba.add(panelTextAtributo3);
-        panel3Arriba.add(panelLabelAtributo4);
-        panel3Arriba.add(panelTextAtributo4);
+        JPanel panelLabelIDate = new JPanel();
+        panelLabelIDate.setBackground(new Color(0, 0, 51));
+        JLabel labelIDate = new JLabel("Fecha inicial: ");
+        labelIDate.setForeground(Color.WHITE);
+        panelLabelIDate.add(labelIDate);
+
+        JPanel panelTextIDate = new JPanel(); 
+        panelTextIDate.setBackground(new Color(0, 0, 51));
+        JTextField textIDate = new JTextField();
+        textIDate.setPreferredSize(new Dimension(150, 25));
+        panelTextIDate.add(textIDate);
+
+        JPanel panelLabelIHour = new JPanel();
+        panelLabelIHour.setBackground(new Color(0, 0, 51));
+        JLabel labelIHour = new JLabel("Hora inicial: ");
+        labelIHour.setForeground(Color.WHITE);
+        panelLabelIHour.add(labelIHour);
+
+        JPanel panelTextIHour = new JPanel(); 
+        panelTextIHour.setBackground(new Color(0, 0, 51));
+        JTextField textIHour = new JTextField();
+        textIHour.setPreferredSize(new Dimension(150, 25));
+        panelTextIHour.add(textIHour);
+
+        JPanel panelLabelDuration = new JPanel();
+        panelLabelDuration.setBackground(new Color(0, 0, 51));
+        JLabel labelDuration = new JLabel("Duración: ");
+        labelDuration.setForeground(Color.WHITE);
+        panelLabelDuration.add(labelDuration);
+
+        JPanel panelTextDuration = new JPanel(); 
+        panelTextDuration.setBackground(new Color(0, 0, 51));
+        JTextField textDuration = new JTextField();
+        textDuration.setPreferredSize(new Dimension(150, 25));
+        panelTextDuration.add(textDuration);
+
+        panel3Arriba.add(panelLabelId);
+        panel3Arriba.add(panelTextId);
+        panel3Arriba.add(panelLabelTittle);
+        panel3Arriba.add(panelTextTittle);
+        panel3Arriba.add(panelLabelSport);
+        panel3Arriba.add(panelTextSport);
+        panel3Arriba.add(panelLabelDistance);
+        panel3Arriba.add(panelTextDistance);
+        panel3Arriba.add(panelLabelIDate);
+        panel3Arriba.add(panelTextIDate);
+        panel3Arriba.add(panelLabelIHour);
+        panel3Arriba.add(panelTextIHour);
+        panel3Arriba.add(panelLabelDuration);
+        panel3Arriba.add(panelTextDuration);
 
         JPanel panelBotonAtras2 = new JPanel();
         panelBotonAtras2.setBackground(new Color(0, 0, 51));
