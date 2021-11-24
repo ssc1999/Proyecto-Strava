@@ -2,6 +2,8 @@ package es.deusto.ingenieria.sd.auctions.client.gui;
 
 import javax.swing.JFrame;
 
+import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -24,8 +26,17 @@ public class LoginWindow extends JFrame{
     private JPanel panel3;
     private JPanel panel3Arriba;
     private JPanel panel3Abajo;
-
-    public LoginWindow() {
+    
+    private LoginController controller;	
+	private String email = "thomas.e2001@gmail.com";
+	private String password = "$!9PhNz,";
+	
+	public LoginWindow(LoginController controller) {
+	    		this.controller = controller;
+	}
+    
+	public LoginWindow() {
+    	
         setBackground(new Color(0, 0, 51));
 
         setTitle("Login Window");

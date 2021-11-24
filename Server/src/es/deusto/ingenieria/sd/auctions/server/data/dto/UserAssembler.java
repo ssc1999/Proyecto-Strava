@@ -25,4 +25,20 @@ public class UserAssembler {
 		
 		return dto;
 	}
+	
+	public User userDTOToUser(UserDTO userDTO) {
+		User user = new User(); 
+		
+		user.setType(userDTO.getType());
+		user.setEmail(userDTO.getEmail());
+		user.setName(userDTO.getName());
+		user.setBirthDate(userDTO.getBirthDate());
+		user.setWeight(userDTO.getWeight());
+		user.setHeight(userDTO.getHeight());
+		user.setFreq(userDTO.getFreq());
+		user.setMaxFreq(userDTO.getMaxFreq());
+		user.setRestFreq(userDTO.getRestFreq());
+		
+		return user;
+	}
 }

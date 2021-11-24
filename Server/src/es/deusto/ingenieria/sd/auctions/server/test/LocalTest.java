@@ -10,7 +10,7 @@ public class LocalTest {
 
 	public static void main(String[] args) {		
 		RemoteFacade facade = null;
-		List<CategoryDTO> categories = null;
+		List<> categories = null;
 		CategoryDTO category = null;
 		List<ArticleDTO> articles = null;
 		ArticleDTO article = null;

@@ -7,36 +7,34 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import es.deusto.ingenieria.sd.auctions.server.data.domain.Article;
-import es.deusto.ingenieria.sd.auctions.server.data.domain.Category;
+import es.deusto.ingenieria.sd.auctions.server.data.domain.LocalUser;
+import es.deusto.ingenieria.sd.auctions.server.data.domain.Session;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.User;
-import es.deusto.ingenieria.sd.auctions.server.data.dto.ArticleAssembler;
-import es.deusto.ingenieria.sd.auctions.server.data.dto.ArticleDTO;
-import es.deusto.ingenieria.sd.auctions.server.data.dto.CategoryAssembler;
-import es.deusto.ingenieria.sd.auctions.server.data.dto.CategoryDTO;
-import es.deusto.ingenieria.sd.auctions.server.services.BidAppService;
-import es.deusto.ingenieria.sd.auctions.server.services.LoginAppService;
+import es.deusto.ingenieria.sd.auctions.server.data.dto.SessionAssembler;
+import es.deusto.ingenieria.sd.auctions.server.data.dto.SessionDTO;
+import es.deusto.ingenieria.sd.auctions.server.services.LoginService;
+import es.deusto.ingenieria.sd.auctions.server.services.SessionService;
 
 public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {	
 	private static final long serialVersionUID = 1L;
 
 	//Data structure for manage Server State
 	private Map<Long, User> serverState = new HashMap<>();
-	
+
 	//TODO: Remove this instances when Singleton Pattern is implemented
-	private LoginAppService loginService = new LoginAppService();
-	private BidAppService bidService = new BidAppService();
+	private LoginService loginService = new LoginService();
+	private SessionService sessionService = new SessionService();
 
 	public RemoteFacade() throws RemoteException {
 		super();		
 	}
 	
 	@Override
-	public synchronized long login(String email, String password) throws RemoteException {
+	public synchronized long login(String type, String email, String password) throws RemoteException {
 		System.out.println(" * RemoteFacade login(): " + email + " / " + password);
 				
 		//Perform login() using LoginAppService
-		User user = loginService.login(email, password);
+		User user = loginService.login(type, email, password);
 			
 		//If login() success user is stored in the Server State
 		if (user != null) {
@@ -54,6 +52,17 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	}
 	
 	@Override
+	public synchronized boolean register(LocalUser user){		
+		LocalUser userTemp = user;
+		
+		if(userTemp == null) {
+			System.out.println("User registered: " + user.toString());
+		}
+		new RemoteException("User i");
+		return false;
+	}
+	
+	@Override
 	public synchronized void logout(long token) throws RemoteException {
 		System.out.println(" * RemoteFacade logout(): " + token);
 		
@@ -66,76 +75,60 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	}
 	
 	@Override
-	public List<CategoryDTO> getCategories() throws RemoteException {
-		System.out.println(" * RemoteFacade getCategories()");
+	public List<SessionDTO> getListSessions(long token) throws RemoteException{
+		System.out.println(" * RemoteFacade getListSessions()");
 		
-		//Get Categories using BidAppService
-		List<Category> categories = bidService.getCategories();
+		List<Session> listSessions = sessionService.getListSessions(token);
 		
-		if (categories != null) {
-			//Convert domain object to DTO
-			return CategoryAssembler.getInstance().categoryToDTO(categories);
-		} else {
-			throw new RemoteException("getCategories() fails!");
-		}
-	}
-
-	@Override
-	public List<ArticleDTO> getArticles(String category) throws RemoteException {
-		System.out.println(" * RemoteFacade getArticle('" + category + "')");
-
-		//Get Articles using BidAppService
-		List<Article> articles = bidService.getArticles(category);
-		
-		if (articles != null) {
-			//Convert domain object to DTO
-			return ArticleAssembler.getInstance().articleToDTO(articles);
-		} else {
-			throw new RemoteException("getArticles() fails!");
+		if(listSessions != null) {
+			return SessionAssembler.getInstance().sessionToDTO(listSessions);
+		}else {
+			throw new RemoteException("getListSessions failed!");
 		}
 	}
 	
 	@Override
-	public boolean makeBid(long token, int article, float amount) throws RemoteException {		
-		System.out.println(" * RemoteFacade makeBid article : " + article + " / amount " + amount);
+	public SessionDTO getSession(long token, int id) throws RemoteException{
+		System.out.println(" * RemoteFacade getSession()");
 		
-		if (this.serverState.containsKey(token)) {						
-			//Make the bid using Bid Application Service
-			if (bidService.makeBid(this.serverState.get(token), article, amount)) {
+		Session session = sessionService.getSession(token, id);
+		if(session != null){
+			return SessionAssembler.getInstance().sessionToDTO(session);
+		}else{
+			throw new RemoteException("Session not found!");
+		}
+	}
+	
+	@Override
+	public boolean addSession(long token, SessionDTO sessionDTO) {
+		System.out.println(" * RemoteFacade addSession()");
+		
+		Session session = SessionAssembler.getInstance().sessionDTOToSession(session);
+		if(this.serverState.containsKey(token)) {
+			
+			if(sessionService.addSession(token, session)) {
 				return true;
-			} else {
-				throw new RemoteException("makeBid() fails!");
+			}else{
+				throw new RemoteException("addSession() failed!");
 			}
-		} else {
-			throw new RemoteException("To place a bid you must first log in");
 		}
+		throw new RemoteException("To add a session first you must log in!");
+		return false;
 	}
 
 	@Override
-	public float getUSDRate() throws RemoteException {
-		System.out.println(" * RemoteFacade get USD rate");
-
-		//Get rate using BidAppService
-		float rate = bidService.getUSDRate();
-		
-		if (rate != -1) {
-			return rate;
-		} else {
-			throw new RemoteException("getUSDRate() fails!");
-		}
+	public boolean addSession(long token, String tittle, String sport) {
+		// TODO Auto-generated method stub
+		return false;
 	}
-
-	@Override
-	public float getGBPRate() throws RemoteException {
-		System.out.println(" * RemoteFacade get GBP rate");
-		
-		//Get rate using BidAppService
-		float rate = bidService.getGBPRate();
-		
-		if (rate != -1) {
-			return rate;
+	
+	public User getUser(long token) {
+		if (serverState.containsKey(token)) {
+			User user = serverState.get(token);
+			return user;
 		} else {
-			throw new RemoteException("getGBPRate() fails!");
+			new RemoteException("User not found!");
+			return null;
 		}
 	}
 }

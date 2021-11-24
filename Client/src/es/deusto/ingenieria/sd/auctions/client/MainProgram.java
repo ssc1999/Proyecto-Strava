@@ -6,9 +6,13 @@ import es.deusto.ingenieria.sd.auctions.client.controller.BidController;
 import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
 import es.deusto.ingenieria.sd.auctions.client.gui.BidWindow;
 import es.deusto.ingenieria.sd.auctions.client.gui.LoginDialog;
+import es.deusto.ingenieria.sd.auctions.client.gui.LoginWindow;
+import es.deusto.ingenieria.sd.auctions.client.gui.SessionWindow;
 import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ArticleDTO;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.CategoryDTO;
+import es.deusto.ingenieria.sd.auctions.server.data.dto.SessionDTO;
+import es.deusto.ingenieria.sd.auctions.server.data.dto.UserDTO;
 
 public class MainProgram {
 
@@ -20,15 +24,16 @@ public class MainProgram {
 		//args[2] = Service Name
 		serviceLocator.setService(args[0], args[1], args[2]);
 		
-		LoginController loginController = new LoginController(serviceLocator);
-		LoginDialog loginDialog = new LoginDialog(loginController);			
-		BidController bidController = new BidController(serviceLocator);			
-		BidWindow bidWindow = new BidWindow(bidController);
 		
+		LoginController loginController = new LoginController(serviceLocator);
+		SessionController sessionController = new SessionController(serviceLocator);			
+		SessionWindow sessionWindow = new SessionWindow(sessionController);
+		LoginWindow loginWindow = new LoginWindow(loginController);
 		//Login
-		loginDialog.login();		
+		loginWindow.login();		
 		//Get Categories
-		List<CategoryDTO> categories = bidWindow.getCategories();
+		List<SessionDTO> sessions = sessionWindow.getSessions();
+		List<UserDTO> users = sessionWindow.getUsers();
 		//Get Articles of a category (first category is selected)
 		List<ArticleDTO> articles = bidWindow.getArticles(categories.get(0).getName());
 		//Convert currency to GBP

@@ -12,10 +12,10 @@ public class User {
 	protected int freq;
 	protected int maxFreq;
 	protected int restFreq;
-	protected List<Session> sessions;
+	protected List<Session> listSessions;
 
 	public User(String type, String email, String name, double weight, double height, String birthDate, int freq, int maxFreq,
-			int restFreq, List<Session> sessions) {
+			int restFreq, List<Session> listSessions) {
 		super();
 		this.type = type;
 		this.email = email;
@@ -26,7 +26,7 @@ public class User {
 		this.freq = freq;
 		this.maxFreq = maxFreq;
 		this.restFreq = restFreq;
-		this.sessions = sessions;
+		this.listSessions = listSessions;
 	}
 	
 	public User() {
@@ -40,7 +40,7 @@ public class User {
 		this.freq = 0;
 		this.maxFreq = 0;
 		this.restFreq = 0;
-		this.sessions = null;
+		this.listSessions = null;
 	}
 
 	public String getType() {
@@ -115,19 +115,19 @@ public class User {
 		this.restFreq = restFreq;
 	}
 	
-	public List<Session> getSessions() {
-		return sessions;
+	public List<Session> getListSessions() {
+		return listSessions;
 	}
 
-	public void setSessions(List<Session> sessions) {
-		this.sessions = sessions;
+	public void setListSessions(List<Session> listSessions) {
+		this.listSessions = listSessions;
 	}
 	
 	@Override
 	public String toString() {
 		return "User [type=" + type + ", email=" + email + ", name=" + name + ", weight=" + weight + ", height="
 				+ height + ", birthDate=" + birthDate + ", freq=" + freq + ", maxFreq=" + maxFreq + ", restFreq="
-				+ restFreq + ", sessions=" + sessions + "]";
+				+ restFreq + ", listSessions=" + listSessions + "]";
 	}
 	
 }

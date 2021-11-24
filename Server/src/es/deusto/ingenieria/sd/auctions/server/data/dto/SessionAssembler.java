@@ -31,7 +31,6 @@ public class SessionAssembler {
 		for (Session session : sessions) {
 			dtos.add(this.sessionToDTO(session));
 		}
-		
 		return dtos;
 	}
 }
