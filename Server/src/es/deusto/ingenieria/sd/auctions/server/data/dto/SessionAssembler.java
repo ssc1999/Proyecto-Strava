@@ -25,12 +25,46 @@ public class SessionAssembler {
 		return dto;
 	}
 
-	public List<SessionDTO> sessionToDTO(List<Session> sessions) {		
-		List<SessionDTO> dtos = new ArrayList<>();
+	public List<SessionDTO> listSessionsToDTO(List<Session> listSessions) {		
+		List<SessionDTO> listSessionsDTO = new ArrayList<>();
 		
-		for (Session session : sessions) {
-			dtos.add(this.sessionToDTO(session));
+		for	(Session session : listSessions) {
+			listSessionsDTO.add(this.sessionToDTO(session));
 		}
-		return dtos;
+		return listSessionsDTO;
 	}
+	
+	public Session sessionDTOToSession(SessionDTO sessionDTO) {
+		Session session = new Session();
+		
+		session.setId(sessionDTO.getId());
+		session.setTittle(sessionDTO.getTittle());
+		session.setSport(sessionDTO.getSport());
+		session.setDistance(sessionDTO.getDistance());
+		session.setiDate(sessionDTO.getiDate());
+		session.setiHour(sessionDTO.getiHour());
+		session.setDuration(sessionDTO.getDuration());
+		
+		return session;
+	}
+	
+	public List<Session> listSessionsDTOToListSessions(List<SessionDTO> listSessionsDTO){
+		List<Session> listSessions = new ArrayList<>();
+		
+		for	(SessionDTO sessionDTO : listSessionsDTO) {
+			Session session = new Session();
+			
+			session.setId(sessionDTO.getId());
+			session.setTittle(sessionDTO.getTittle());
+			session.setSport(sessionDTO.getSport());
+			session.setDistance(sessionDTO.getDistance());
+			session.setiDate(sessionDTO.getiDate());
+			session.setiHour(sessionDTO.getiHour());
+			session.setDuration(sessionDTO.getDuration());
+			
+			listSessions.add(session);
+		}
+		return listSessions;
+	}
+	
 }
