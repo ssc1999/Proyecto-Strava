@@ -117,6 +117,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		return false;
 	}
 	
+	@Override
 	public UserDTO getUser(long token) {
 		if(this.serverState.containsKey(token)) {
 			User user = this.serverState.get(token);

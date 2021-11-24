@@ -4,20 +4,19 @@ import java.rmi.RemoteException;
 import java.util.List;
 
 import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
-import es.deusto.ingenieria.sd.auctions.server.data.domain.Session;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.SessionDTO;
 
 public class SessionController {
 
 	private ServiceLocator serviceLocator;
-	private Session session;
+	
 	public SessionController(ServiceLocator serviceLocator) {
 		this.serviceLocator = serviceLocator;
 	}
 	
-	public List<SessionDTO> getSessions(long token){
+	public List<SessionDTO> getListSessions(long token){
 		try {
-			return this.serviceLocator.getService().getSessions();
+			return this.serviceLocator.getService().getListSessions(token);
 		}catch(RemoteException e) {
 			System.out.println("Error getting list Sessions");
 			return null;
@@ -26,23 +25,24 @@ public class SessionController {
 	
 	public SessionDTO getSession(long token, int id) {
 		try {
-			
+			return this.serviceLocator.getService().getSession(token, id);
 		}catch(RemoteException e) {
-			
+			return null;
 		}
 	}
 	
-	public boolean addSession(int id, String tittle, String sport, double distance, String iDate, String iHour, String duration){ {
-		try {
-			
-			this.session = this.serviceLocator.getSession(id, tittle, sport, distance, iDate, iHour, duration);	
-			return true;
-			
-		}catch(RemoteException e) {
-			System.out.println("# Error creating the session" + e);
-			return false;
-		}
+	public boolean addSession(long token, SessionDTO sessionDTO){ {
+		
+			try {
+				if(this.serviceLocator.getService().addSession(token, sessionDTO)) {
+					return true;
+				}
+				return false;
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				return false;
+			}
 	}
 
-}
+	}
 }
