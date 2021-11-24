@@ -1,6 +1,9 @@
 package es.deusto.ingenieria.sd.auctions.client.gui;
 
 import javax.swing.JFrame;
+import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
 
 import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
 import es.deusto.ingenieria.sd.auctions.client.controller.SessionController;
@@ -22,7 +25,6 @@ public class LoginWindow extends JFrame{
     private JPanel panel1Arriba;
     private JPanel panel1ArribaDerecha;
     private JPanel panel1ArribaIzquierda;
-    private JPanel panel1Medio;
     private JPanel panel1Abajo;
 
     private JPanel panel2;
@@ -31,6 +33,7 @@ public class LoginWindow extends JFrame{
 
     private JPanel panel3;
     private JPanel panel3Arriba;
+    private JPanel panel3Medio;
     private JPanel panel3Abajo;
     
     private static LoginController controller;	
@@ -57,12 +60,10 @@ public class LoginWindow extends JFrame{
         panel1.setBackground(new Color(0, 0, 51));
         panel1Arriba = new JPanel(new BorderLayout());
         panel1Arriba.setBackground(new Color(0, 0, 51));
-        panel1ArribaDerecha = new JPanel(new BorderLayout());
+        panel1ArribaDerecha = new JPanel(new GridLayout(3, 1));
         panel1ArribaDerecha.setBackground(new Color(0, 0, 51));
         panel1ArribaIzquierda = new JPanel(new BorderLayout());
         panel1ArribaIzquierda.setBackground(new Color(0, 0, 51));
-        panel1Medio = new JPanel(new GridLayout(1, 2));
-        panel1Medio.setBackground(new Color(0, 0, 51));
         panel1Abajo = new JPanel(new BorderLayout());
         panel1Abajo.setBackground(new Color(0, 0, 51));
 
@@ -75,8 +76,10 @@ public class LoginWindow extends JFrame{
 
         panel3 = new JPanel(new BorderLayout());
         panel3.setBackground(new Color(0, 0, 51));
-        panel3Arriba = new JPanel(new GridLayout(2, 2));
+        panel3Arriba = new JPanel(new BorderLayout());
         panel3Arriba.setBackground(new Color(0, 0, 51));
+        panel3Medio = new JPanel(new GridLayout(2, 2));
+        panel3Medio.setBackground(new Color(0, 0, 51));
         panel3Abajo = new JPanel(new GridLayout(1, 2));
         panel3Abajo.setBackground(new Color(0, 0, 51));
 
@@ -86,8 +89,18 @@ public class LoginWindow extends JFrame{
 
         // panel 1
 
-        BufferedImage bufferedImage = ImageIO.read(new File("Client/images/strava2.jpg"));
+        Border border2 = panel1Arriba.getBorder();
+        Border margin2 = new EmptyBorder(40, 0, 0, 10);
+        panel1ArribaIzquierda.setBorder(new CompoundBorder(border2, margin2));
+
+        Border border3 = panel1Arriba.getBorder();
+        Border margin3 = new EmptyBorder(40, 10, 0, 0);
+        panel1ArribaDerecha.setBorder(new CompoundBorder(border3, margin3));
+
+        BufferedImage bufferedImage = ImageIO.read(new File("Client/images/strava2.png"));
         Image image = bufferedImage.getScaledInstance(270, 170, Image.SCALE_DEFAULT);
+
+        panel1ArribaIzquierda.add(new JLabel(new ImageIcon(image)));
 
         JPanel panelBotonStravaLogin = new JPanel();
         panelBotonStravaLogin.setBackground(new Color(0, 0, 51));
@@ -95,10 +108,8 @@ public class LoginWindow extends JFrame{
         botonStravaLogin.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
         botonStravaLogin.setBackground(Color.DARK_GRAY);
         botonStravaLogin.setForeground(Color.WHITE);
-        botonStravaLogin.setPreferredSize(new Dimension(300, 50));
+        botonStravaLogin.setPreferredSize(new Dimension(190, 35));
         panelBotonStravaLogin.add(botonStravaLogin);
-
-        panel1ArribaIzquierda.add(panelBotonStravaLogin);
 
         botonStravaLogin.addActionListener(new ActionListener() {
 				
@@ -120,7 +131,7 @@ public class LoginWindow extends JFrame{
         botonGoogleLogin.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
         botonGoogleLogin.setBackground(Color.DARK_GRAY);
         botonGoogleLogin.setForeground(Color.WHITE);
-        botonGoogleLogin.setPreferredSize(new Dimension(160, 25));
+        botonGoogleLogin.setPreferredSize(new Dimension(160, 35));
         panelBotonGoogleLogin.add(botonGoogleLogin);
 
         botonGoogleLogin.addActionListener(new ActionListener() {
@@ -143,7 +154,7 @@ public class LoginWindow extends JFrame{
         botonFacebookLogin.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
         botonFacebookLogin.setBackground(Color.DARK_GRAY);
         botonFacebookLogin.setForeground(Color.WHITE);
-        botonFacebookLogin.setPreferredSize(new Dimension(160, 25));
+        botonFacebookLogin.setPreferredSize(new Dimension(160, 35));
         panelBotonFacebookLogin.add(botonFacebookLogin);
 
         botonFacebookLogin.addActionListener(new ActionListener() {
@@ -160,8 +171,16 @@ public class LoginWindow extends JFrame{
             }
         });
 
-        panel1Medio.add(panelBotonGoogleLogin);
-        panel1Medio.add(panelBotonFacebookLogin);
+        panel1ArribaDerecha.add(panelBotonStravaLogin);
+        panel1ArribaDerecha.add(panelBotonGoogleLogin);
+        panel1ArribaDerecha.add(panelBotonFacebookLogin);
+
+        panel1Arriba.add(panel1ArribaDerecha, BorderLayout.EAST);
+        panel1Arriba.add(panel1ArribaIzquierda, BorderLayout.WEST);    
+        
+        Border border4 = panel1Abajo.getBorder();
+        Border margin4 = new EmptyBorder(20, 0, 0, 0);
+        panel1Abajo.setBorder(new CompoundBorder(border4, margin4));
 
         JPanel panelBotonRegistrarse = new JPanel();
         panelBotonRegistrarse.setBackground(new Color(0, 0, 51));
@@ -169,7 +188,7 @@ public class LoginWindow extends JFrame{
         botonRegistrarse.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
         botonRegistrarse.setBackground(Color.DARK_GRAY);
         botonRegistrarse.setForeground(Color.WHITE);
-        botonRegistrarse.setPreferredSize(new Dimension(150, 40));
+        botonRegistrarse.setPreferredSize(new Dimension(120, 30));
         panelBotonRegistrarse.add(botonRegistrarse);
 
         botonRegistrarse.addActionListener(new ActionListener() {
@@ -189,12 +208,15 @@ public class LoginWindow extends JFrame{
         panel1Abajo.add(panelBotonRegistrarse);
 
         panel1.add(panel1Arriba, BorderLayout.NORTH);
-        panel1.add(panel1Medio, BorderLayout.CENTER);
         panel1.add(panel1Abajo, BorderLayout. SOUTH);
 
         panel1.setVisible(true);
 
         // panel 2
+
+        Border border5 = panel2Arriba.getBorder();
+        Border margin5 = new EmptyBorder(25, 0, 0, 0);
+        panel2Arriba.setBorder(new CompoundBorder(border5, margin5));
 
         JPanel panelLabelEmail = new JPanel();
         panelLabelEmail.setBackground(new Color(0, 0, 51));
@@ -331,6 +353,19 @@ public class LoginWindow extends JFrame{
 
         // panel 3
 
+        Border border6 = panel3Arriba.getBorder();
+        Border margin6 = new EmptyBorder(55, 0, 20, 0);
+        panel3Arriba.setBorder(new CompoundBorder(border6, margin6));
+
+        JPanel panelLabelIniciarSesion = new JPanel(); 
+        panelLabelIniciarSesion.setBackground(new Color(0, 0, 51));
+        JLabel labelIniciarSesion = new JLabel("INICIAR SESIÓN");
+        labelIniciarSesion.setFont(new Font("", Font.PLAIN, 18));
+        labelIniciarSesion.setForeground(Color.WHITE);
+        panelLabelIniciarSesion.add(labelIniciarSesion);
+
+        panel3Arriba.add(panelLabelIniciarSesion);
+
         JPanel panelLabelEmail2 = new JPanel(); 
         panelLabelEmail2.setBackground(new Color(0, 0, 51));
         JLabel labelEmail2 = new JLabel("Email:");
@@ -355,10 +390,10 @@ public class LoginWindow extends JFrame{
         textContrasenya2.setPreferredSize(new Dimension(150, 25));
         panelTextContrasenya2.add(textContrasenya2);
 
-        panel3Arriba.add(panelLabelEmail2);
-        panel3Arriba.add(panelTextEmail2);
-        panel3Arriba.add(panelLabelContrasenya2);
-        panel3Arriba.add(panelTextContrasenya2);
+        panel3Medio.add(panelLabelEmail2);
+        panel3Medio.add(panelTextEmail2);
+        panel3Medio.add(panelLabelContrasenya2);
+        panel3Medio.add(panelTextContrasenya2);
 
         JPanel panelBotonAceptar = new JPanel();
         panelBotonAceptar.setBackground(new Color(0, 0, 51));
@@ -406,6 +441,7 @@ public class LoginWindow extends JFrame{
         panel3Abajo.add(panelBotonAceptar);
 
         panel3.add(panel3Arriba, BorderLayout.NORTH);
+        panel3.add(panel3Medio, BorderLayout.CENTER);
         panel3.add(panel3Abajo, BorderLayout. SOUTH);
 
         //
