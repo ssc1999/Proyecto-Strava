@@ -1,6 +1,13 @@
 package es.deusto.ingenieria.sd.auctions.client.gui;
 
 import javax.swing.JFrame;
+import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
+
+import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
+import es.deusto.ingenieria.sd.auctions.client.controller.SessionController;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -27,12 +34,15 @@ public class SessionWindow extends JFrame{
     private JPanel panel3Arriba;
     private JPanel panel3Abajo;
 
-    public SessionWindow() throws IOException {
+    private static SessionController controller;
+    private LoginController loginController;
+
+    public SessionWindow(SessionController controller) throws IOException {
         setBackground(new Color(0, 0, 51));
 
         setTitle("Session Window");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setPreferredSize(new Dimension(800, 330));
+        setPreferredSize(new Dimension(550, 350));
         setVisible(true);
         pack();
 
@@ -50,6 +60,7 @@ public class SessionWindow extends JFrame{
         panel1Derecha.setBackground(new Color(0, 0, 51));
 
         panel2 = new JPanel(new GridLayout(7, 1));
+        panel2.setBackground(new Color(0, 0, 51));
         panel2Arriba = new JPanel(new GridLayout(numSesiones/2, 2));
         panel2Abajo = new JPanel(new BorderLayout());
         scroll = new JScrollPane(panel2Arriba); // scroll --> panel2Arriba
@@ -57,6 +68,7 @@ public class SessionWindow extends JFrame{
 
         panel3 = new JPanel(new BorderLayout());
         panel3Arriba = new JPanel(new GridLayout(6, 2));
+        panel3Arriba.setBackground(new Color(0, 0, 51));
         panel3Abajo = new JPanel(new GridLayout(1, 2));
 
         contentPane.add(panel1);
@@ -65,9 +77,18 @@ public class SessionWindow extends JFrame{
 
         // panel 1
 
-        /*BufferedImage bufferedImage = ImageIO.read(new File("images/barco2.jpg"));
-        Image image = bufferedImage.getScaledInstance(200, 100, Image.SCALE_DEFAULT);
-		panel1Izquierda.add(new JLabel(new ImageIcon(image)));*/
+        Border border = panel1Izquierda.getBorder();
+        Border margin = new EmptyBorder(45, 0, 0, 17);
+        panel1Izquierda.setBorder(new CompoundBorder(border, margin));
+
+        BufferedImage bufferedImage = ImageIO.read(new File("Client/images/strava1.jpg"));
+        Image image = bufferedImage.getScaledInstance(270, 170, Image.SCALE_DEFAULT);
+
+		panel1Izquierda.add(new JLabel(new ImageIcon(image)));
+
+        Border border2 = panel1Derecha.getBorder();
+        Border margin2 = new EmptyBorder(75, 0, 0, 0);
+        panel1Derecha.setBorder(new CompoundBorder(border2, margin2));
 
         JPanel panelBotonNuevaSesion = new JPanel();
         panelBotonNuevaSesion.setBackground(new Color(0, 0, 51));
@@ -130,7 +151,7 @@ public class SessionWindow extends JFrame{
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 try {
-                    new LoginWindow();
+                    new LoginWindow(loginController);
                     dispose();
                 } catch (Exception e) {
                     // TODO Auto-generated catch block
@@ -147,6 +168,10 @@ public class SessionWindow extends JFrame{
         panel1.add(panel1Derecha, BorderLayout.EAST);
 
         // panel 2
+
+        Border border4 = panel2.getBorder();
+        Border margin4 = new EmptyBorder(12, 0, 0, 0);
+        panel2.setBorder(new CompoundBorder(border4, margin4));
 
         for (int i = 1; i <= numSesiones; i++) {
             JPanel panelBotonSesion = new JPanel();
@@ -201,6 +226,10 @@ public class SessionWindow extends JFrame{
         panel2.add(panel2Abajo, BorderLayout.SOUTH);
 
         // panel 3
+
+        Border border3 = panel3Arriba.getBorder();
+        Border margin3 = new EmptyBorder(30, 0, 0, 0);
+        panel3Arriba.setBorder(new CompoundBorder(border3, margin3));
 
         JPanel panelLabelTittle = new JPanel();
         panelLabelTittle.setBackground(new Color(0, 0, 51));
@@ -403,7 +432,7 @@ public class SessionWindow extends JFrame{
         EventQueue.invokeLater(new Runnable() {
             public void run() {
              try {
-              SessionWindow frame = new SessionWindow();
+              SessionWindow frame = new SessionWindow(controller);
               frame.setVisible(true);
              } catch (Exception e) {
               e.printStackTrace();

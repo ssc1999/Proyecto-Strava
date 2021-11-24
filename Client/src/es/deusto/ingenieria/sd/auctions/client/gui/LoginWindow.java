@@ -3,11 +3,15 @@ package es.deusto.ingenieria.sd.auctions.client.gui;
 import javax.swing.JFrame;
 
 import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
+import es.deusto.ingenieria.sd.auctions.client.controller.SessionController;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.io.File;
 import java.io.IOException;
 
 public class LoginWindow extends JFrame{
@@ -16,6 +20,8 @@ public class LoginWindow extends JFrame{
 
     private JPanel panel1;
     private JPanel panel1Arriba;
+    private JPanel panel1ArribaDerecha;
+    private JPanel panel1ArribaIzquierda;
     private JPanel panel1Medio;
     private JPanel panel1Abajo;
 
@@ -27,21 +33,19 @@ public class LoginWindow extends JFrame{
     private JPanel panel3Arriba;
     private JPanel panel3Abajo;
     
-    private LoginController controller;	
+    private static LoginController controller;	
+    private SessionController sessionController;
+    
 	private String email = "thomas.e2001@gmail.com";
 	private String password = "$!9PhNz,";
-	
-	public LoginWindow(LoginController controller) {
-	    		this.controller = controller;
-	}
     
-	public LoginWindow() {
+	public LoginWindow(LoginController controller) throws IOException {
     	
         setBackground(new Color(0, 0, 51));
 
         setTitle("Login Window");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setPreferredSize(new Dimension(800, 330));
+        setPreferredSize(new Dimension(550, 350));
         setVisible(true);
         pack();
 
@@ -53,6 +57,10 @@ public class LoginWindow extends JFrame{
         panel1.setBackground(new Color(0, 0, 51));
         panel1Arriba = new JPanel(new BorderLayout());
         panel1Arriba.setBackground(new Color(0, 0, 51));
+        panel1ArribaDerecha = new JPanel(new BorderLayout());
+        panel1ArribaDerecha.setBackground(new Color(0, 0, 51));
+        panel1ArribaIzquierda = new JPanel(new BorderLayout());
+        panel1ArribaIzquierda.setBackground(new Color(0, 0, 51));
         panel1Medio = new JPanel(new GridLayout(1, 2));
         panel1Medio.setBackground(new Color(0, 0, 51));
         panel1Abajo = new JPanel(new BorderLayout());
@@ -78,6 +86,9 @@ public class LoginWindow extends JFrame{
 
         // panel 1
 
+        BufferedImage bufferedImage = ImageIO.read(new File("Client/images/strava2.jpg"));
+        Image image = bufferedImage.getScaledInstance(270, 170, Image.SCALE_DEFAULT);
+
         JPanel panelBotonStravaLogin = new JPanel();
         panelBotonStravaLogin.setBackground(new Color(0, 0, 51));
         JButton botonStravaLogin = new JButton("Strava Login");
@@ -87,7 +98,7 @@ public class LoginWindow extends JFrame{
         botonStravaLogin.setPreferredSize(new Dimension(300, 50));
         panelBotonStravaLogin.add(botonStravaLogin);
 
-        panel1Arriba.add(panelBotonStravaLogin);
+        panel1ArribaIzquierda.add(panelBotonStravaLogin);
 
         botonStravaLogin.addActionListener(new ActionListener() {
 				
@@ -361,7 +372,7 @@ public class LoginWindow extends JFrame{
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 try {
-                    new SessionWindow();
+                    new SessionWindow(sessionController);
                     dispose();
                 } catch (Exception e) {
                     // TODO Auto-generated catch block
@@ -406,6 +417,6 @@ public class LoginWindow extends JFrame{
     }
 
     public static void main(String[] args) throws IOException {
-		new LoginWindow();
+		new LoginWindow(controller);
 	}
 }
