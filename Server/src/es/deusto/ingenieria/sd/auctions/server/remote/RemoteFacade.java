@@ -12,6 +12,8 @@ import es.deusto.ingenieria.sd.auctions.server.data.domain.Session;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.User;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.SessionAssembler;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.SessionDTO;
+import es.deusto.ingenieria.sd.auctions.server.data.dto.UserAssembler;
+import es.deusto.ingenieria.sd.auctions.server.data.dto.UserDTO;
 import es.deusto.ingenieria.sd.auctions.server.services.LoginService;
 import es.deusto.ingenieria.sd.auctions.server.services.SessionService;
 
@@ -115,10 +117,11 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		return false;
 	}
 	
-	public User getUser(long token) {
+	public UserDTO getUser(long token) {
 		if(this.serverState.containsKey(token)) {
 			User user = this.serverState.get(token);
-			return user;
+			UserDTO userDTO = UserAssembler.getInstance().userToDTO((LocalUser) user);
+			return userDTO;
 		}
 		new RemoteException("User not found!");
 		return null;

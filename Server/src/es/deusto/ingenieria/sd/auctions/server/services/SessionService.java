@@ -10,6 +10,8 @@ import java.util.Map;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.LocalUser;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.Session;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.User;
+import es.deusto.ingenieria.sd.auctions.server.data.dto.UserAssembler;
+import es.deusto.ingenieria.sd.auctions.server.data.dto.UserDTO;
 import es.deusto.ingenieria.sd.auctions.server.remote.RemoteFacade;
 
 //TODO: Implement Singleton Pattern
@@ -75,7 +77,8 @@ public class SessionService {
 	public List<Session> getListSessions(long token) {
 		//TODO: Get articles of a category using DAO Pattern
 		if (token != 0) {
-			User user = remoteFacade.getUser(token);
+			UserDTO userDTO = remoteFacade.getUser(token);
+			User user = UserAssembler.getInstance().userDTOToUser(userDTO);
 			List<Session> listSessions = user.getListSessions();
 			return listSessions;
 		}
@@ -87,7 +90,8 @@ public class SessionService {
 	public boolean addSession(long token, Session session) {
 		if (session != null) {
 			if (token != 0) {
-				User user = remoteFacade.getUser(token);
+				UserDTO userDTO = remoteFacade.getUser(token);
+				User user = UserAssembler.getInstance().userDTOToUser(userDTO);
 				List<Session> tempSessionList = user.getListSessions();
 				tempSessionList.add(session);
 				user.setListSessions(tempSessionList);

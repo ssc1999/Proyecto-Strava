@@ -7,6 +7,7 @@ import java.util.List;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.LocalUser;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.User;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.SessionDTO;
+import es.deusto.ingenieria.sd.auctions.server.data.dto.UserDTO;
 
 
 //This interface defines the API of the Server. It represents the Remote Facade pattern
@@ -24,7 +25,7 @@ public interface IRemoteFacade extends Remote {
 	
 	public boolean addSession(long token, SessionDTO sessionDTO);
 
-	public User getUser(long token);
+	public UserDTO getUser(long token);
 	
 //	public long login(String email, String password) throws RemoteException;
 //	
