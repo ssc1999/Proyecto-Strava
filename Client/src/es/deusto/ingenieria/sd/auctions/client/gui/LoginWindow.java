@@ -185,18 +185,6 @@ public class LoginWindow extends JFrame{
 
         // panel 2
 
-        JPanel panelLabelType = new JPanel();
-        panelLabelType.setBackground(new Color(0, 0, 51));
-        JLabel labelType = new JLabel("Tipo: ");
-        labelType.setForeground(Color.WHITE);
-        panelLabelType.add(labelType);
-
-        JPanel panelTextType = new JPanel(); 
-        panelTextType.setBackground(new Color(0, 0, 51));
-        JTextField textType = new JTextField();
-        textType.setPreferredSize(new Dimension(150, 25));
-        panelTextType.add(textType);
-
         JPanel panelLabelEmail = new JPanel();
         panelLabelEmail.setBackground(new Color(0, 0, 51));
         JLabel labelEmail = new JLabel("Email: ");
@@ -208,6 +196,18 @@ public class LoginWindow extends JFrame{
         JTextField textEmail = new JTextField();
         textEmail.setPreferredSize(new Dimension(150, 25));
         panelTextEmail.add(textEmail);
+
+        JPanel panelLabelContrasenya = new JPanel();
+        panelLabelContrasenya.setBackground(new Color(0, 0, 51));
+        JLabel labelContrasenya = new JLabel("Contraseña: ");
+        labelContrasenya.setForeground(Color.WHITE);
+        panelLabelContrasenya.add(labelContrasenya);
+
+        JPanel panelTextContrasenya = new JPanel(); 
+        panelTextContrasenya.setBackground(new Color(0, 0, 51));
+        JTextField textContrasenya = new JPasswordField();
+        textContrasenya.setPreferredSize(new Dimension(150, 25));
+        panelTextContrasenya.add(textContrasenya);
 
         JPanel panelLabelName = new JPanel();
         panelLabelName.setBackground(new Color(0, 0, 51));
@@ -257,10 +257,10 @@ public class LoginWindow extends JFrame{
         textBirthDate.setPreferredSize(new Dimension(150, 25));
         panelTextBirthDate.add(textBirthDate);
 
-        panel2Arriba.add(panelLabelType);
-        panel2Arriba.add(panelTextType);
         panel2Arriba.add(panelLabelEmail);
         panel2Arriba.add(panelTextEmail);
+        panel2Arriba.add(panelLabelContrasenya);
+        panel2Arriba.add(panelTextContrasenya);
         panel2Arriba.add(panelLabelName);
         panel2Arriba.add(panelTextName);
         panel2Arriba.add(panelLabelWeight);
@@ -332,22 +332,22 @@ public class LoginWindow extends JFrame{
         textEmail2.setPreferredSize(new Dimension(150, 25));
         panelTextEmail2.add(textEmail2);
 
-        JPanel panelLabelContrasenya = new JPanel();
-        panelLabelContrasenya.setBackground(new Color(0, 0, 51));
-        JLabel labelContrasenya = new JLabel("Contraseña:");
-        labelContrasenya.setForeground(Color.WHITE);
-        panelLabelContrasenya.add(labelContrasenya);
+        JPanel panelLabelContrasenya2 = new JPanel();
+        panelLabelContrasenya2.setBackground(new Color(0, 0, 51));
+        JLabel labelContrasenya2 = new JLabel("Contraseña:");
+        labelContrasenya2.setForeground(Color.WHITE);
+        panelLabelContrasenya2.add(labelContrasenya2);
 
-        JPanel panelTextContrasenya = new JPanel();
-        panelTextContrasenya.setBackground(new Color(0, 0, 51));
-        JTextField textContrasenya = new JPasswordField();
-        textContrasenya.setPreferredSize(new Dimension(150, 25));
-        panelTextContrasenya.add(textContrasenya);
+        JPanel panelTextContrasenya2 = new JPanel();
+        panelTextContrasenya2.setBackground(new Color(0, 0, 51));
+        JTextField textContrasenya2 = new JPasswordField();
+        textContrasenya2.setPreferredSize(new Dimension(150, 25));
+        panelTextContrasenya2.add(textContrasenya2);
 
         panel3Arriba.add(panelLabelEmail2);
         panel3Arriba.add(panelTextEmail2);
-        panel3Arriba.add(panelLabelContrasenya);
-        panel3Arriba.add(panelTextContrasenya);
+        panel3Arriba.add(panelLabelContrasenya2);
+        panel3Arriba.add(panelTextContrasenya2);
 
         JPanel panelBotonAceptar = new JPanel();
         panelBotonAceptar.setBackground(new Color(0, 0, 51));

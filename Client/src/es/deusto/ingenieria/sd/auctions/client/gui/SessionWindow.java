@@ -56,7 +56,7 @@ public class SessionWindow extends JFrame{
         scroll.setPreferredSize(new Dimension(400, 250));
 
         panel3 = new JPanel(new BorderLayout());
-        panel3Arriba = new JPanel(new GridLayout(7, 2));
+        panel3Arriba = new JPanel(new GridLayout(6, 2));
         panel3Abajo = new JPanel(new GridLayout(1, 2));
 
         contentPane.add(panel1);
@@ -202,18 +202,6 @@ public class SessionWindow extends JFrame{
 
         // panel 3
 
-        JPanel panelLabelId = new JPanel();
-        panelLabelId.setBackground(new Color(0, 0, 51));
-        JLabel labelId = new JLabel("Id: ");
-        labelId.setForeground(Color.WHITE);
-        panelLabelId.add(labelId);
-
-        JPanel panelLabelId2 = new JPanel(); 
-        panelLabelId2.setBackground(new Color(0, 0, 51));
-        JLabel LabelId2 = new JLabel(); // que coja el id
-        LabelId2.setPreferredSize(new Dimension(150, 25));
-        panelLabelId2.add(LabelId2);
-
         JPanel panelLabelTittle = new JPanel();
         panelLabelTittle.setBackground(new Color(0, 0, 51));
         JLabel labelTittle = new JLabel("Título: ");
@@ -286,8 +274,6 @@ public class SessionWindow extends JFrame{
         textDuration.setPreferredSize(new Dimension(150, 25));
         panelTextDuration.add(textDuration);
 
-        panel3Arriba.add(panelLabelId);
-        panel3Arriba.add(panelLabelId2);
         panel3Arriba.add(panelLabelTittle);
         panel3Arriba.add(panelTextTittle);
         panel3Arriba.add(panelLabelSport);
