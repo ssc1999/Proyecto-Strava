@@ -1,6 +1,9 @@
 package es.deusto.ingenieria.sd.auctions.server.data.domain;
 
 public class Session {
+
+	public static int count = 1;
+
 	private int id;
 	private String tittle;
 	private String sport;
@@ -9,9 +12,10 @@ public class Session {
 	private String iHour;
 	private String duration;
 
-	public Session(int id, String tittle, String sport, double distance, String iDate, String iHour, String duration) {
+	public Session(String tittle, String sport, double distance, String iDate, String iHour, String duration) {
 		super();
-		this.id = id;
+		this.id = count;
+		count++;
 		this.tittle = tittle;
 		this.sport = sport;
 		this.distance = distance;
@@ -22,7 +26,8 @@ public class Session {
 
 	public Session() {
 		super();
-		this.id = 0;
+		this.id = count;
+		count++;
 		this.tittle = "";
 		this.sport = "";
 		this.distance = 0.00;

@@ -209,11 +209,11 @@ public class SessionWindow extends JFrame{
         labelId.setForeground(Color.WHITE);
         panelLabelId.add(labelId);
 
-        JPanel panelTextId = new JPanel(); 
-        panelTextId.setBackground(new Color(0, 0, 51));
-        JTextField textId = new JTextField();
-        textId.setPreferredSize(new Dimension(150, 25));
-        panelTextId.add(textId);
+        JPanel panelLabelId2 = new JPanel(); 
+        panelLabelId2.setBackground(new Color(0, 0, 51));
+        JLabel LabelId2 = new JLabel(); // que coja el id
+        LabelId2.setPreferredSize(new Dimension(150, 25));
+        panelLabelId2.add(LabelId2);
 
         JPanel panelLabelTittle = new JPanel();
         panelLabelTittle.setBackground(new Color(0, 0, 51));
@@ -288,7 +288,7 @@ public class SessionWindow extends JFrame{
         panelTextDuration.add(textDuration);
 
         panel3Arriba.add(panelLabelId);
-        panel3Arriba.add(panelTextId);
+        panel3Arriba.add(panelLabelId2);
         panel3Arriba.add(panelLabelTittle);
         panel3Arriba.add(panelTextTittle);
         panel3Arriba.add(panelLabelSport);
