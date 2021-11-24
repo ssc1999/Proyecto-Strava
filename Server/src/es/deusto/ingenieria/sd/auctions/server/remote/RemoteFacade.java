@@ -81,7 +81,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		List<Session> listSessions = sessionService.getListSessions(token);
 		
 		if(listSessions != null) {
-			return SessionAssembler.getInstance().sessionToDTO(listSessions);
+			return SessionAssembler.getInstance().listSessionsToDTO(listSessions);
 		}else {
 			throw new RemoteException("getListSessions failed!");
 		}
@@ -103,32 +103,16 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	public boolean addSession(long token, SessionDTO sessionDTO) {
 		System.out.println(" * RemoteFacade addSession()");
 		
-		Session session = SessionAssembler.getInstance().sessionDTOToSession(session);
+		Session session = SessionAssembler.getInstance().sessionDTOToSession(sessionDTO);
 		if(this.serverState.containsKey(token)) {
 			
 			if(sessionService.addSession(token, session)) {
 				return true;
-			}else{
-				throw new RemoteException("addSession() failed!");
+			}else {
+				return false;
 			}
 		}
-		throw new RemoteException("To add a session first you must log in!");
-		return false;
-	}
-
-	@Override
-	public boolean addSession(long token, String tittle, String sport) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 	
-	public User getUser(long token) {
-		if (serverState.containsKey(token)) {
-			User user = serverState.get(token);
-			return user;
-		} else {
-			new RemoteException("User not found!");
-			return null;
-		}
-	}
 }

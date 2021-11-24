@@ -21,7 +21,7 @@ public interface IRemoteFacade extends Remote {
 	
 	public SessionDTO getSession(long token, int id) throws RemoteException;
 	
-	public boolean addSession(long token, String tittle, String sport);
+	public boolean addSession(long token, SessionDTO sessionDTO);
 
 	
 	
