@@ -5,6 +5,7 @@ import java.rmi.RemoteException;
 import java.util.List;
 
 import es.deusto.ingenieria.sd.auctions.server.data.domain.LocalUser;
+import es.deusto.ingenieria.sd.auctions.server.data.domain.User;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.SessionDTO;
 
 
