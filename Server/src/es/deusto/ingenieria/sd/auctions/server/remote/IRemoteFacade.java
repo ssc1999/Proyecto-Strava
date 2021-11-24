@@ -23,7 +23,7 @@ public interface IRemoteFacade extends Remote {
 	
 	public boolean addSession(long token, SessionDTO sessionDTO);
 
-	
+	public User getUser(long token);
 	
 //	public long login(String email, String password) throws RemoteException;
 //	

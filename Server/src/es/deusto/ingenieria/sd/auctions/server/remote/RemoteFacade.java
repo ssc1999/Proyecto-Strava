@@ -115,4 +115,13 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		return false;
 	}
 	
+	public User getUser(long token) {
+		if(this.serverState.containsKey(token)) {
+			User user = this.serverState.get(token);
+			return user;
+		}
+		new RemoteException("User not found!");
+		return null;
+	}
+	
 }
