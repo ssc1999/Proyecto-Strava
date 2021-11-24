@@ -308,6 +308,25 @@ public class SessionWindow extends JFrame{
         botonAtras2.setBackground(Color.LIGHT_GRAY);
         panelBotonAtras2.add(botonAtras2);
 
+        /*botonAtras2.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                try {
+                    if (botonAceptar2.isVisible()) {
+                        panel3.setVisible(false);
+                        panel1.setVisible(true);
+                    } else {
+                        panel3.setVisible(false);
+                        panel2.setVisible(true);
+                    }
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        });*/
+
         JPanel panelBotonAceptar2 = new JPanel();
         panelBotonAceptar2.setBackground(new Color(0, 0, 51));
         JButton botonAceptar2 = new JButton("Aceptar");
@@ -329,27 +348,6 @@ public class SessionWindow extends JFrame{
             }
         });
 
-        // lo pongo aquí para que coja el botonAceptar2
-
-        botonAtras2.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                try {
-                    if (botonAceptar2.isVisible()) {
-                        panel3.setVisible(false);
-                        panel1.setVisible(true);
-                    } else {
-                        panel3.setVisible(false);
-                        panel2.setVisible(true);
-                    }
-                } catch (Exception e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-            }
-        });
-
         panel3Abajo.add(panelBotonAtras2);
         panel3Abajo.add(panelBotonAceptar2);
 
@@ -363,7 +361,7 @@ public class SessionWindow extends JFrame{
         panel2.setVisible(false);
         panel3.setVisible(false);
 
-        // lo pongo aquí porque si no no coge el botón aceptar2
+        // lo pongo aquí porque si no no coge el los botones
 
         botonNuevaSesion.addActionListener(new ActionListener() {
 
@@ -388,6 +386,25 @@ public class SessionWindow extends JFrame{
                     panel2.setVisible(true);
                     panel1.setVisible(false);
                     botonAceptar2.setVisible(false);
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        botonAtras2.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                try {
+                    if (botonAceptar2.isVisible()) {
+                        panel3.setVisible(false);
+                        panel1.setVisible(true);
+                    } else {
+                        panel3.setVisible(false);
+                        panel2.setVisible(true);
+                    }
                 } catch (Exception e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
