@@ -6,8 +6,8 @@ public class LocalUser extends User{
 	
 	protected String password;
 
-	public LocalUser(String type, String email, String name, double weight, double height, String birthDate, int freq, int maxFreq,
-			int restFreq, String password, List<Session> sessions) {
+	public LocalUser(String type, String name, String email, String password, double weight, double height, String birthDate, int freq, int maxFreq,
+			int restFreq, List<Session> sessions) {
 		super(type, email, name, weight, height, birthDate,freq, maxFreq, restFreq, sessions);
 		this.password = password;
 	}

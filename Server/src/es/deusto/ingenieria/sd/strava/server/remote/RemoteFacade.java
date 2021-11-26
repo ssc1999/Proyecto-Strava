@@ -54,13 +54,13 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	}
 	
 	@Override
-	public synchronized boolean register(LocalUser user){		
-		LocalUser userTemp = user;
+	public synchronized boolean register(String type, String name, String email, String password, double weight, double height, String birthdate, int freq, int maxFreq, int restFreq){		
+		LocalUser user = new LocalUser(type, name, email, password, weight, height, birthdate, freq, maxFreq, restFreq, null);
 		
-		if(userTemp == null) {
+		if(user != null) {
 			System.out.println("User registered: " + user.toString());
 		}
-		new RemoteException("User i");
+		new RemoteException("Error registering the user!");
 		return false;
 	}
 	

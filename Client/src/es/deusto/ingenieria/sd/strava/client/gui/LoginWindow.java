@@ -97,7 +97,7 @@ public class LoginWindow extends JFrame{
         Border margin3 = new EmptyBorder(40, 10, 0, 0);
         panel1ArribaDerecha.setBorder(new CompoundBorder(border3, margin3));
 
-        BufferedImage bufferedImage = ImageIO.read(new File("Client/images/strava2.png"));
+        BufferedImage bufferedImage = ImageIO.read(new File("images/strava2.png"));
         Image image = bufferedImage.getScaledInstance(270, 170, Image.SCALE_DEFAULT);
 
         panel1ArribaIzquierda.add(new JLabel(new ImageIcon(image)));

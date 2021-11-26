@@ -21,16 +21,17 @@ public class LoginService {
 		}
 	}
 	
-	public boolean register(LocalUser localUser) {
+
+	public boolean register(String type, String name, String email, String password, double weight, double height, String birthdate, int freq, int maxFreq, int restFreq){
+	
+		LocalUser user = new LocalUser(type, name, email, password, weight, height, birthdate, freq, maxFreq, restFreq, null);
 		
-		LocalUser user = localUser;
-		if(user.getEmail() == localUser.getEmail()) {
+		if( user.getEmail() == type && user.getPassword() == password){
 			return true;
-		}else {
-			System.out.println("Error registering the user!s");
-			return false;
 		}
-		
+		return false;
 	}
+
+	
 	
 }

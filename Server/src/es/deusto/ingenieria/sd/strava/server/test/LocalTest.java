@@ -37,7 +37,7 @@ public class LocalTest {
 			String sha1 = org.apache.commons.codec.digest.DigestUtils.sha1Hex("$!9PhNz,");
 			token = facade.login("google", "thomas.e2001@gmail.com", sha1);			
 			//Register
-			facade.register(localUser);
+			facade.register("","","","", 0, 0, "", 0,0,0);
 			//Logout
 			facade.logout(token);
 			//Get sessions to check if they have been created
