@@ -81,7 +81,7 @@ public class SessionWindow extends JFrame{
         Border margin = new EmptyBorder(45, 0, 0, 17);
         panel1Izquierda.setBorder(new CompoundBorder(border, margin));
 
-        BufferedImage bufferedImage = ImageIO.read(new File("Client/images/strava1.jpg"));
+        BufferedImage bufferedImage = ImageIO.read(new File("images/strava1.jpg"));
         Image image = bufferedImage.getScaledInstance(270, 170, Image.SCALE_DEFAULT);
 
 		panel1Izquierda.add(new JLabel(new ImageIcon(image)));
