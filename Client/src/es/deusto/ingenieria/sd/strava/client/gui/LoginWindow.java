@@ -42,7 +42,9 @@ public class LoginWindow extends JFrame{
 	private String email = "thomas.e2001@gmail.com";
 	private String password = "$!9PhNz,";
     
-	public LoginWindow(LoginController controller) throws IOException {
+	public LoginWindow(LoginController controller
+			
+			) throws IOException {
     	
         setBackground(new Color(0, 0, 51));
 
@@ -107,7 +109,7 @@ public class LoginWindow extends JFrame{
         JButton botonStravaLogin = new JButton("Strava Login");
         botonStravaLogin.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
         botonStravaLogin.setBackground(Color.DARK_GRAY);
-        botonStravaLogin.setForeground(Color.WHITE);
+        botonStravaLogin.setForeground(Color.BLACK);
         botonStravaLogin.setPreferredSize(new Dimension(190, 35));
         panelBotonStravaLogin.add(botonStravaLogin);
 
@@ -116,6 +118,7 @@ public class LoginWindow extends JFrame{
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 try {
+                	
                     panel3.setVisible(true);
                     panel1.setVisible(false);
                 } catch (Exception e) {
@@ -130,7 +133,7 @@ public class LoginWindow extends JFrame{
         JButton botonGoogleLogin = new JButton("Google Login");
         botonGoogleLogin.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
         botonGoogleLogin.setBackground(Color.DARK_GRAY);
-        botonGoogleLogin.setForeground(Color.WHITE);
+        botonGoogleLogin.setForeground(Color.BLACK);
         botonGoogleLogin.setPreferredSize(new Dimension(160, 35));
         panelBotonGoogleLogin.add(botonGoogleLogin);
 
@@ -153,7 +156,7 @@ public class LoginWindow extends JFrame{
         JButton botonFacebookLogin = new JButton("Facebook Login");
         botonFacebookLogin.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
         botonFacebookLogin.setBackground(Color.DARK_GRAY);
-        botonFacebookLogin.setForeground(Color.WHITE);
+        botonFacebookLogin.setForeground(Color.BLACK);
         botonFacebookLogin.setPreferredSize(new Dimension(160, 35));
         panelBotonFacebookLogin.add(botonFacebookLogin);
 
@@ -187,7 +190,7 @@ public class LoginWindow extends JFrame{
         JButton botonRegistrarse = new JButton("Registrarse");
         botonRegistrarse.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
         botonRegistrarse.setBackground(Color.DARK_GRAY);
-        botonRegistrarse.setForeground(Color.WHITE);
+        botonRegistrarse.setForeground(Color.BLACK);
         botonRegistrarse.setPreferredSize(new Dimension(120, 30));
         panelBotonRegistrarse.add(botonRegistrarse);
 

@@ -14,8 +14,6 @@ public class LocalTest {
 		RemoteFacade facade = null;
 		SessionDTO session = null;
 		List<SessionDTO> sessions= null;
-		UserDTO user = null;
-		LocalUser localUser = null;
 		long token = 0l;
 		
 		try {
@@ -45,7 +43,7 @@ public class LocalTest {
 			sessions = facade.getListSessions(token);
 			System.out.println("\t- " + session);
 			//Get user
-			user = facade.getUser(token);
+			UserDTO user = facade.getUser(token);
 			
 		} catch (Exception e) {
 			System.out.println("\t# Error: " + e.getMessage());	

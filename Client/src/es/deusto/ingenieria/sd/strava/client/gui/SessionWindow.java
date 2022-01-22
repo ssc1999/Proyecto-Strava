@@ -95,7 +95,7 @@ public class SessionWindow extends JFrame{
         JButton botonNuevaSesion = new JButton("Crear nueva actividad"); // crear nueva sesión
         botonNuevaSesion.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
         botonNuevaSesion.setBackground(Color.DARK_GRAY);
-        botonNuevaSesion.setForeground(Color.WHITE);
+        botonNuevaSesion.setForeground(Color.BLACK);
         botonNuevaSesion.setPreferredSize(new Dimension(200, 50));
         panelBotonNuevaSesion.add(botonNuevaSesion);
 
@@ -105,7 +105,7 @@ public class SessionWindow extends JFrame{
         panelBotonVerSesiones.setBackground(new Color(0, 0, 51));
         JButton botonVerSesiones = new JButton("Ver actividades"); // ver sesión
         botonVerSesiones.setPreferredSize(new Dimension(200, 50));
-        botonVerSesiones.setForeground(Color.WHITE);
+        botonVerSesiones.setForeground(Color.BLACK);
         botonVerSesiones.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
         botonVerSesiones.setBackground(Color.DARK_GRAY);
         panelBotonVerSesiones.add(botonVerSesiones);
@@ -116,7 +116,7 @@ public class SessionWindow extends JFrame{
         panelBotonCerrarSesion.setBackground(new Color(0, 0, 51));
         JButton botonCerrarSesion = new JButton("Cerrar sesión");
         botonCerrarSesion.setPreferredSize(new Dimension(110, 25));
-        botonCerrarSesion.setForeground(Color.WHITE);
+        botonCerrarSesion.setForeground(Color.BLACK);
         botonCerrarSesion.setFont(new Font("Yu Gothic UI", Font.PLAIN, 12));
         botonCerrarSesion.setBackground(Color.DARK_GRAY);
         panelBotonCerrarSesion.add(botonCerrarSesion);
@@ -153,7 +153,7 @@ public class SessionWindow extends JFrame{
             panelBotonSesion.setBackground(new Color(0, 0, 51));
             JButton botonSesion = new JButton("Actividad " + i);
             botonSesion.setBackground(Color.DARK_GRAY);
-            botonSesion.setForeground(Color.WHITE);
+            botonSesion.setForeground(Color.BLACK);
             botonSesion.setPreferredSize(new Dimension(150, 25));
             panelBotonSesion.add(botonSesion);
 
